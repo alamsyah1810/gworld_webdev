@@ -41,13 +41,16 @@
     <td>Total user yang sudah mendaftar</td>
   </tr>
   <tr>
-    <td>Seluruh game yang tersedia</td>
+    <td><a href='daftar voucher.php'>Seluruh game yang tersedia</a></td>
   </tr>
   <tr>
     <td>Pembelian voucher terbanyak</td>
   </tr>
   <tr>
     <td>Pembelian voucher terendah</td>
+  </tr>
+  <tr>
+    <td><a href='metode pembayaran.php'>Metode pembayaran yang tersedia</a></td>
   </tr>
   <tr>
     
@@ -59,23 +62,3 @@
 
 <br>
 
-<table style="width:70%, float:left;">
-  <tr>
-    <th>Name</th>
-    <th colspan="4">Telephone</th>
-  </tr>
-  <tr>
-    <th>Bill Gates</th>
-    <th>id</th>
-    <th>nama</th>
-    <th>email</th>
-    <th>telp</th>
-  </tr>
-  <tr>
-    <td>Bill Gates</td>
-    <td>55577854</td>
-    <td>55577855</td>
-    <td>55577854</td>
-    <td>55577855</td>
-  </tr>
-</table>

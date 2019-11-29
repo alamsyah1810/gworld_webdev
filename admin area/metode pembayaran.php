@@ -1,11 +1,12 @@
 <?php
 include("config_onlline.php");
-$query=mysqli_query($con,"select id_voucher, nominal_voucher from voucher where id_game='st01'");
+$query=mysqli_query($con,"select nama_metodepembayaran from metode_pembayaran where status_metodepembayaran = 1");
 ?>
+
 <html>
 
 <head>
-  <title>Voucher Status Steam</title>
+  <title>Metode Pembayaran</title>
 </head>
 <style>
   table,
@@ -26,18 +27,14 @@ $query=mysqli_query($con,"select id_voucher, nominal_voucher from voucher where 
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th colspan=2>Steam</th>
-                    </tr>
-                    <tr>
-                      <td>ID Voucher</td>
-                      <td>Nominal</td>
+                      <th>Metode Pembayaran</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
                     <?php while($tampung=mysqli_fetch_assoc($query)): ?>
                     <tr>
-                    <td><?php echo $tampung['id_voucher']?></td>
-                    <td><?php echo $tampung['nominal_voucher']?></td>
+                    <td><?php echo $tampung['nama_metodepembayaran']   ?></td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
@@ -46,4 +43,3 @@ $query=mysqli_query($con,"select id_voucher, nominal_voucher from voucher where 
 
     </body>
     </html>
-

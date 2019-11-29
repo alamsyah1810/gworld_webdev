@@ -1,3 +1,8 @@
+<?php
+include("config_onlline.php");
+$query=mysqli_query($con,"select nama_game from game");
+?>
+
 <html>
 
 <head>
@@ -17,68 +22,24 @@
     text-align: left;
   }
 </style>
+<body>
+ <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Game</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php while($tampung=mysqli_fetch_assoc($query)): ?>
+                    <tr>
+                    <td><?php echo $tampung['nama_game']   ?></td>
+                    </tr>
+                    <?php endwhile; ?>
+                  </tbody>
+                </table>
+              </div>
 
-<table style="width:30%, float:right, position:relative;">
-  <tr>
-    <th style="text-align:center;">Game</th>
-  </tr>
-  <tr>
-    <td><a href='voucher steam.php'>Steam</a></td>
-  </tr>
-  <tr>
-    <td>X-Box</td>
-  </tr>
-  <tr>
-    <td>Google Play</td>
-  </tr>
-  <tr>
-    <td>PS Store</td>
-  </tr>
-  <tr>
-    <td><a href='voucher contra.php'>Contra</a></td>
-  </tr>
-  <tr>
-    <td><a href='voucher garena.php'>Garena</a></td>
-  </tr>
-  <tr>
-    <td>Nintendo E-Shop</td>
-  </tr>
-  <tr>
-    <td><a href='voucher ff.php'>Free Fire</a></td>
-  </tr>
-  <tr>
-    <td><a href='voucher ml bb.php'>ML Bang Bang</a></td>
-  </tr>
-  <tr>
-    <td><a href='voucher pubgm.php'>PUBG Mobile</a></td>
-  </tr>
-  <tr>
-    <td><a href='voucher speed drifters.php'>Speed Drifters</a></td>
-  </tr>
-  <tr>
-    <td><a href='voucher aov.php'>AOV</a></td>
-  </tr>
-  <tr>
-    <td><a href='voucher gosultans.php'>Game of Sultans</a></td>
-  </tr>
-  <tr>
-    <td><a href='voucher lsaga.php'>Lumia Saga</a></td>
-  </tr>
-  <tr>
-    <td><a href ='voucher hevolved.php'>Heroes Evolved</a></td>
-  </tr>
-  <tr>
-    <td>Ragnarok</td>
-  </tr>
-  <tr>
-    <td>ML Adventure</td>
-  </tr>
-  <tr>
-    <td>Crisis Action</td>
-  </tr>
-  <tr>
-    <td>COD Mobile</td>
-  </tr>
-
-</table>
-
+    </body>
+    </html>

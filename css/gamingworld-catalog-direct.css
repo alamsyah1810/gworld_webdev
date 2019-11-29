@@ -307,6 +307,8 @@ body {
      float: right;
      right: 30px;
      background-color: rgb(255, 136, 0);
+     font-family: Arial, Helvetica, sans-serif;
+     border-radius: 5%;
      height: 45px;
      width: 15%;
    }
