@@ -1,7 +1,11 @@
+<?php
+include("config_onlline.php");
+$query=mysqli_query($con,"select id_voucher, nominal_voucher from voucher where id_game='pu01'");
+?>
 <html>
 
 <head>
-  <title>Voucher Status PUBG Mobile</title>
+  <title>Voucher PUBG Mobile</title>
 </head>
 <style>
   table,
@@ -16,23 +20,30 @@
     padding: 5px;
     text-align: left;
   }
-</style>  
+</style>
+<body>
+ <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th colspan=2>Voucher PUBG Mobile</th>
+                    </tr>
+                    <tr>
+                      <td>ID Voucher</td>
+                      <td>Nominal</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php while($tampung=mysqli_fetch_assoc($query)): ?>
+                    <tr>
+                    <td><?php echo $tampung['id_voucher']?></td>
+                    <td><?php echo $tampung['nominal_voucher']?></td>
+                    </tr>
+                    <?php endwhile; ?>
+                  </tbody>
+                </table>
+              </div>
 
-<table style="width:70%, float:left;">
-  <tr>
-    <th colspan="4" style="text-align:center;">Voucher</th>
-  </tr>
-  <tr>
-    <td>Code</td>
-    <td>Nominal</td>
-    <td>Status</td>
-    <td>Trx_id</td>
-  </tr>
-  <tr>
-    <td>ACFX0-12AKT-APXEE</td>
-    <td>325 UC</td>
-    <td>Sold</td>
-    <td>PUBGM12_325</td>
-  </tr>
+    </body>
+    </html>
 
-</table>

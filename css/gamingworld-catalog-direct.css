@@ -103,6 +103,7 @@ body {
   .col-md-7 .bgputih3 {
     width: 90%;
     height: 240px;
+    position: relative;
     background-color: white;
     border-radius: 10px;
   }
@@ -294,28 +295,14 @@ body {
     margin-top: 18px;
    }
 
-   .col-md-7 .bgputih3 .form-group {
-      width: 94%;
-      left: 20px;
-      position: relative;
-      bottom: 70px;
-   }
-
-   .col-md-7 .bgputih3 button {
-     position: relative;
-     bottom: 55px;
-     float: right;
-     right: 30px;
-     background-color: rgb(255, 136, 0);
-     font-family: Arial, Helvetica, sans-serif;
-     border-radius: 5px;
-     height: 45px;
-     width: 15%;
-   }
-
-   .col-md-7 .bgputih3 .form-group2 {
-    width: 94%;
-    left: 20px;
+   .dropdown .btn-default {
+    background-color: inherit;
+    border: 0px;
     position: relative;
-    bottom: 70px;
-   }
+    margin-top: 10px;
+    margin-left: 10px;
+    right: 10px;
+    font-family: inherit;
+  }
+
+  

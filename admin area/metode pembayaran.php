@@ -23,7 +23,12 @@ $query=mysqli_query($con,"select nama_metodepembayaran from metode_pembayaran wh
   }
 </style>
 <body>
- <div class="table-responsive">
+
+<div style='width: 300px;float:left:background-color:#eee;'>
+    <?php include "menu.php" ; ?>
+  </div>
+
+ <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
                 <table class="table table-striped">
                   <thead>
                     <tr>
@@ -34,7 +39,7 @@ $query=mysqli_query($con,"select nama_metodepembayaran from metode_pembayaran wh
                   <tbody>
                     <?php while($tampung=mysqli_fetch_assoc($query)): ?>
                     <tr>
-                    <td><?php echo $tampung['nama_metodepembayaran']   ?></td>
+                    <td style="text-align:center;"><?php echo $tampung['nama_metodepembayaran']   ?></td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>

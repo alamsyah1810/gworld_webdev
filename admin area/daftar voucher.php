@@ -1,6 +1,6 @@
 <?php
 include("config_onlline.php");
-$query=mysqli_query($con,"select nama_game from game");
+$query=mysqli_query($con,"select * from game");
 ?>
 
 <html>
@@ -23,18 +23,23 @@ $query=mysqli_query($con,"select nama_game from game");
   }
 </style>
 <body>
- <div class="table-responsive">
+
+<div style='width: 300px;float:left:background-color:#eee;'>
+    <?php include "menu.php" ; ?>
+  </div>
+
+ <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>Game</th>
-                      
+                      <th colspan="2" style="text-align:center;">Daftar produk</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php while($tampung=mysqli_fetch_assoc($query)): ?>
                     <tr>
-                    <td><?php echo $tampung['nama_game']   ?></td>
+                    <td style="text-align:center;"><?php echo $tampung['nama_game']   ?></td>
+                    <td style="text-align:center;"><img style="width: 30%;heigh: 40px;" class="steam" src="images_catalog/<?php echo $tampung['gambar']?> "></td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>

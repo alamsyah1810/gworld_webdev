@@ -26,7 +26,7 @@ $query=mysqli_query($con,"select id_voucher, nominal_voucher from voucher where 
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th colspan=2>Steam</th>
+                      <th colspan=2>Voucher Steam</th>
                     </tr>
                     <tr>
                       <td>ID Voucher</td>

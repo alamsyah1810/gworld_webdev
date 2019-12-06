@@ -103,6 +103,7 @@
     .col-md-7 .bgputih3 {
       width: 90%;
       height: 180px;
+      position: relative;
       background-color: white;
       border-radius: 10px;
     }
@@ -132,11 +133,11 @@
       padding-top: 6px;
     }
 
-     .bgputih .col-md-12 {
-       bottom: 50px;
-     }
+    .bgputih .col-md-12 {
+      bottom: 50px;
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-12 {
+    .bgputih .col-md-12 .col-md-4 .wallet-12 {
       position: relative;
       border-style: solid;
       border-color: rgb(170, 170, 170);
@@ -148,14 +149,14 @@
       top: 0px;
       color: gray;
       bottom: 70px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-12 h4 {
+    .bgputih .col-md-12 .col-md-4 .wallet-12 h4 {
       margin-left: 30px;
       margin-top: 18px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-45 {
+    .bgputih .col-md-12 .col-md-4 .wallet-45 {
       position: relative;
       border-style: solid;
       border-color: rgb(170, 170, 170);
@@ -168,14 +169,14 @@
       height: 60px;
       top: 0px;
       color: gray;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-45 h4 {
+    .bgputih .col-md-12 .col-md-4 .wallet-45 h4 {
       margin-left: 30px;
       margin-top: 18px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-60 {
+    .bgputih .col-md-12 .col-md-4 .wallet-60 {
       position: relative;
       border-style: solid;
       border-color: rgb(170, 170, 170);
@@ -188,14 +189,14 @@
       height: 60px;
       top: 0px;
       color: gray;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-60 h4 {
+    .bgputih .col-md-12 .col-md-4 .wallet-60 h4 {
       margin-left: 30px;
       margin-top: 18px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-90 {
+    .bgputih .col-md-12 .col-md-4 .wallet-90 {
       position: relative;
       border-style: solid;
       border-color: rgb(170, 170, 170);
@@ -207,14 +208,14 @@
       top: 10px;
       color: gray;
       bottom: 70px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-90 h4 {
+    .bgputih .col-md-12 .col-md-4 .wallet-90 h4 {
       margin-left: 30px;
       margin-top: 18px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-120 {
+    .bgputih .col-md-12 .col-md-4 .wallet-120 {
       position: relative;
       border-style: solid;
       border-color: rgb(170, 170, 170);
@@ -227,14 +228,14 @@
       height: 60px;
       top: 10px;
       color: gray;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-120 h4 {
+    .bgputih .col-md-12 .col-md-4 .wallet-120 h4 {
       margin-left: 30px;
       margin-top: 18px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-250 {
+    .bgputih .col-md-12 .col-md-4 .wallet-250 {
       position: relative;
       border-style: solid;
       border-color: rgb(170, 170, 170);
@@ -247,14 +248,14 @@
       height: 60px;
       top: 10px;
       color: gray;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-250 h4 {
+    .bgputih .col-md-12 .col-md-4 .wallet-250 h4 {
       margin-left: 30px;
       margin-top: 18px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-400 {
+    .bgputih .col-md-12 .col-md-4 .wallet-400 {
       position: relative;
       border-style: solid;
       border-color: rgb(170, 170, 170);
@@ -267,14 +268,14 @@
       height: 60px;
       top: 20px;
       color: gray;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-400 h4 {
+    .bgputih .col-md-12 .col-md-4 .wallet-400 h4 {
       margin-left: 30px;
       margin-top: 18px;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-600 {
+    .bgputih .col-md-12 .col-md-4 .wallet-600 {
       position: relative;
       border-style: solid;
       border-color: rgb(170, 170, 170);
@@ -287,29 +288,38 @@
       height: 60px;
       top: 20px;
       color: gray;
-     }
+    }
 
-     .bgputih .col-md-12 .col-md-4 .wallet-600 h4 {
+    .bgputih .col-md-12 .col-md-4 .wallet-600 h4 {
       margin-left: 30px;
       margin-top: 18px;
-     }
+    }
 
-     .col-md-7 .bgputih3 .form-group {
-        width: 94%;
-        left: 20px;
-        position: relative;
-        bottom: 70px;
-     }
+    .col-md-7 .bgputih3 .form-group {
+      width: 94%;
+      left: 20px;
+      position: relative;
+      bottom: 70px;
+    }
 
-     .col-md-7 .bgputih3 button {
-       position: relative;
-       bottom: 75px;
-       float: right;
-       right: 30px;
-       background-color: rgb(255, 136, 0);
-       font-family: Arial, Helvetica, sans-serif;
-       border-radius: 5px;
-       height: 45px;
-       width: 15%;
-     }
-
+    .col-md-7 .bgputih3 button {
+      position: relative;
+      bottom: 75px;
+      float: right;
+      right: 30px;
+      background-color: rgb(255, 136, 0);
+      font-family: Arial, Helvetica, sans-serif;
+      border-radius: 5px;
+      height: 45px;
+      width: 15%;
+    }
+    
+    .dropdown .btn-default {
+      background-color: inherit;
+      border: 0px;
+      position: relative;
+      margin-top: 10px;
+      margin-left: 10px;
+      right: 10px;
+      font-family: inherit;
+    }

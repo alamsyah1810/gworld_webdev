@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("config_onlline.php");
 
 
@@ -16,7 +17,10 @@ $awal=($halamanaktif*$dataperhalaman)-$dataperhalaman;
 
 $query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$dataperhalaman");
 
+if(isset($_SESSION['nama'])){
+  $home=$_SESSION['nama'];
 
+}else{}
 ?>
 
 
@@ -187,18 +191,25 @@ $query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$da
       position: relative;
       top: 40px;
     }
-    
+
     .bg-orange .col-md-12 .col-md-3 .copyright {
-     top: 70px;
-     position: relative;
-     color: rgb(94, 94, 94);
-     text-align: right;
-     left: 110px;
-     font-family: Arial, Helvetica, sans-serif;
+      top: 70px;
+      position: relative;
+      color: rgb(94, 94, 94);
+      text-align: right;
+      left: 110px;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-   
-
+    .dropdown .btn-default {
+      background-color: inherit;
+      border: 0px;
+      position: relative;
+      margin-top: 10px;
+      margin-left: 10px;
+      right: 10px;
+      font-family: inherit;
+    }
   </style>
 </head>
 
@@ -207,14 +218,33 @@ $query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$da
   <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="Web prototype navbar.php">GamingWorld</a>
+        <a class="navbar-brand" href="Web_prototype_navbar.php">GamingWorld</a>
       </div>
       <ul class="nav navbar-nav">
         <li><a href="news.html">Gaming News</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <?php if(isset($_SESSION['nama'])){?>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            <li><a href="daftar.php"><span class="glyphicon glyphicon-user"></span> <?php echo $home?></a></li>
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Account Settings</a></li>
+            <li><a href="#">Point</a></li>
+            <li><a href="logout.php">Log Out</a></li>
+          </ul>
+
+        </div>
+
+        <?php }else{  ?>
+
         <li><a href="daftar.php"><span class="glyphicon glyphicon-user"></span> Daftar</a></li>
         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Masuk</a></li>
+
+        <?php };?>
+
       </ul>
       <form class="navbar-form navbar-right" action="/action_page.php">
         <div class="input-group">
@@ -238,22 +268,23 @@ $query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$da
       <div class="col-md-12">
         <div class="col-md-3">
           <a href='catalog-steam.php?jenis=Steam'>
-            <img class="img-responsive game1" src='Images/steam_tile.jpg'>
+            <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game1" src='Images/steam_tile.jpg'>
           </a>
         </div>
         <div class="col-md-3">
           <a href='catalog-steam.php?jenis=XBox'>
-            <img class="img-responsive game8" src='Images/xboxgiftcard_tile.jpg'>
+            <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game8"
+              src='Images/xboxgiftcard_tile.jpg'>
           </a>
         </div>
         <div class="col-md-3">
           <a href="catalog-steam.php?jenis=Google play">
-            <img class="img-responsive game3" src='Images/gp_tile.jpg'>
+            <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game3" src='Images/gp_tile.jpg'>
           </a>
         </div>
         <div class="col-md-3">
           <a href='catalog-steam.php?jenis=Playstation Store'>
-            <img class="img-responsive game4" src='Images/psn_store_tile.jpg'>
+            <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game4" src='Images/psn_store_tile.jpg'>
           </a>
           <br>
         </div>
@@ -261,22 +292,24 @@ $query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$da
 
       <div class="col-md-12">
         <div class="col-md-3">
-        <a href='catalog-steam.php?jenis=Contra'>
-            <img class="img-responsive game5" src='Images/contra_tile.jpg'>
+          <a href='catalog-steam.php?jenis=Contra'>
+            <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game5" src='Images/contra_tile.jpg'>
           </a>
         </div>
         <div class="col-md-3">
-        <a href='catalog-steam.php?jenis=Garena'>
-            <img class="img-responsive game6" src='Images/garena_shells_tile.jpg'>
+          <a href='catalog-steam.php?jenis=Garena'>
+            <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game6"
+              src='Images/garena_shells_tile.jpg'>
           </a>
         </div>
         <div class="col-md-3">
-        <a href='catalog-steam.php?jenis=Nintendo E-Shop'>
-            <img class="img-responsive game7" src='Images/nintendoeshop_tile.jpg'>
+          <a href='catalog-steam.php?jenis=Nintendo E-Shop'>
+            <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game7"
+              src='Images/nintendoeshop_tile.jpg'>
           </a>
         </div>
         <div class="col-md-3">
-          
+
         </div>
       </div>
     </div>
@@ -292,36 +325,33 @@ $query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$da
 
       <div class="col-md-3">
         <a href='catalog-pubgm.php?jenis=<?php echo $tampung['nama_game']  ?>'>
-          <img class="img-responsive game1" src="Images/<?php echo $tampung['gambar'] ?>">
+          <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game1"
+            src="Images/<?php echo $tampung['gambar'] ?>">
         </a>
       </div>
       <?php  endwhile ;?>
     </div>
 
-    
 
-    
+
+
   </div>
   <br>
   <br>
 
   <nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <?php for($i=1;$i<=$jumlahhalaman;$i++):?>
-    <li><a href="?halaman=<?php echo $i ?>"><?php echo $i ?></a></li>
+    <ul class="pagination">
+      <li>
+
+      </li>
+      <?php for($i=1;$i<=$jumlahhalaman;$i++):?>
+      <li><a href="?halaman=<?php echo $i ?>"><?php echo $i ?></a></li>
       <?php endfor; ?>
-    <li>
-      <a href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+      <li>
+
+      </li>
+    </ul>
+  </nav>
 
   <div class="webinfo bg-white" id="info">
     <div class="row">
@@ -362,34 +392,39 @@ $query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$da
     <div class="bg-orange">
       <div class="col-md-12">
         <div class="col-md-3">
-          
+
         </div>
         <div class="col-md-3">
           <a href="https://www.facebook.com/NzReVeaLzYuwa">
-          <img class="fb" src='Images/Facebook_logo_(square).png'>
+            <img class="fb" src='Images/Facebook_logo_(square).png'>
           </a>
           <a href="https://www.instagram.com/sumargo.hans/">
-          <img class="ig" src='Images/new_instagram_logo-1024x1024.jpg'>
+            <img class="ig" src='Images/new_instagram_logo-1024x1024.jpg'>
           </a>
           <h5 class="copyright">© Hak Cipta Gaming World 2019</h5>
         </div>
-        <div class="col-md-3"> 
-            <div class="help">
-                <h5>Ada Masalah ?</h5>
-                <h4>Kontak Kami</h4>
-              </div>
+        <div class="col-md-3">
+          <div class="help">
+            <h5>Ada Masalah ?</h5>
+            <h4>Kontak Kami</h4>
+          </div>
         </div>
         <div class="col-md-3">
-            <div class="negara">
-                <img class="bendera" src='Images/flag-155928_640.png'>
-                <h5>Indonesia</h5>
-            </div>
+          <div class="negara">
+            <img class="bendera" src='Images/flag-155928_640.png'>
+            <h5>Indonesia</h5>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-
+  <div class="cart">
+    <a href="keranjang.php">
+      <img style="position:fixed; width:3%; height: 42px; float:left; left:20px; bottom: 20px;"
+        src='images/black-shopping-cart-icon-22.png'>
+      <a href="keranjang.php">
+  </div>
 
 </body>
 
