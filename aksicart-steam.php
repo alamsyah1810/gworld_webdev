@@ -14,7 +14,7 @@ $_SESSION['barang dipilih']=1;
 
 
 
-header("Location: catalog-pubgm.php?jenis=$_SESSION[nama_game]");
+header("Location: catalog-steam.php?jenis=$_SESSION[nama_game]");
 
 
 ?>

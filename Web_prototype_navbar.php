@@ -232,7 +232,6 @@ if(isset($_SESSION['nama'])){
           </button>
           <ul class="dropdown-menu">
             <li><a href="#">Account Settings</a></li>
-            <li><a href="#">Point</a></li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
 

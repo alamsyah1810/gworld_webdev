@@ -26,7 +26,7 @@ if(isset($_SESSION['nama'])){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href='css/bootstrap.min.css'>
-  <link rel="stylesheet" href='css/gamingworld-catalog-direct.css'>
+  <link rel="stylesheet" href='css/gamingworld-catalog-pubgm.css'>
   <script src="script/jquery.min.js"></script>
   <script src='js/bootstrap.min.js'></script>
 
@@ -37,15 +37,30 @@ if(isset($_SESSION['nama'])){
   <style>
     <?php if(isset($_SESSION['barang dipilih'])) {
       ?>
-    .wallet-12
+   .col-md-12 .col-md-4 .wallet-12 .voucher
     {
-    background-color:white;
+    background-color:inherit;
     }
     <?php
     }
 
     ;
     ?>
+
+.col-md-12 .col-md-4 .wallet-12 .voucher {
+      position:relative;
+      margin-top: 10px;
+      width: 100%;
+      height: 60px;
+      bottom: 10px;
+      background-color: inherit;
+      border-radius: 5px;
+      left: 5px;
+      font-size: 17px;
+      color:gray;
+      box-shadow: 1px 2px 3px gray;
+      letter-spacing:1px;
+    }
 
   </style>
 
@@ -68,7 +83,6 @@ if(isset($_SESSION['nama'])){
           </button>
           <ul class="dropdown-menu">
             <li><a href="#">Account Settings</a></li>
-            <li><a href="#">Point</a></li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
 
@@ -122,7 +136,7 @@ if(isset($_SESSION['nama'])){
             <div class="wallet-12">
               <a
                 href="aksicart.php?voucher=<?php echo $tampung2['id_voucher']?>&nominal=<?php echo $tampung2['harga_voucher']?>">
-                <h4 style="position:relative;right:15px;"><?php echo $tampung2['nominal_voucher']?></h4>
+                <button class="voucher" type="button"><?php echo $tampung2['nominal_voucher']?></button>
               </a>
             </div>
           </div>
@@ -147,9 +161,9 @@ if(isset($_SESSION['nama'])){
             <div class="row">
               <div class="col">
 
-                <input style="position:relative; left:80px; bottom:60px; width:48%; height:35px; color:black;"
+                <input style="position:relative; left:80px; bottom:60px; width:48%; height:35px; color:black; border-radius:4px;border:1px;border-style:solid;border-color:gray;"
                   class="email" type="text" name="email" placeholder=" Email" required>
-                <input style="position:relative; width:48%; height:35px; right:485px; bottom:10px; color:black;"
+                <input style="position:relative; width:48%; height:35px; right:485px; bottom:10px; color:black;border-radius:4px;border:1px;border-style:solid;border-color:gray;"
                   class="id" type="text" name="id" placeholder=" ID" required>
                 <input
                   style="position:relative; left:490px; width:13%; height:35px; text-align:center; background-color: rgb(255,136,0); border-radius: 4px;"

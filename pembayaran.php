@@ -1,8 +1,13 @@
 <?php
 include("config_onlline.php");
+session_start();
 $query=mysqli_query($con,"select * from metode_pembayaran");
 $tampung=mysqli_fetch_assoc($query);
 
+if(isset($_SESSION['nama'])){
+  $home=$_SESSION['nama'];
+
+}else{}
 ?>
 
 
@@ -40,13 +45,14 @@ $tampung=mysqli_fetch_assoc($query);
     }
 
     .bg-putih {
-      width: 55%;
-      top: 120px;
-      border-radius: 10px;
-      left: 23%;
-      height: 580px;
+      width: 35%;
+      top: 83px;
+      border-radius: 0px 0px 10px 10px;
+      left: 34%;
+      height: 480px;
       background-color: white;
       position: relative;
+      border: 1px solid #B0C4DE;
     }
 
     .bg-putih h2 {
@@ -60,37 +66,71 @@ $tampung=mysqli_fetch_assoc($query);
     .bg-putih .pembayaran {
       position: relative;
       top: 15px;
-      left: 14px;
+      
     }
 
     .bg-putih .metode {
-      top: 40px;
+      top: 20px;
       position: relative;
       margin-top: 10px;
       border-color: rgb(170, 170, 170);
       box-shadow: 1px 2px 3px gray;
       border-radius: 6px;
-      width: 86%;
-      left: 60px;
+      text-align:center;
+      width: 60%;
+      left: 100px;
       height: 70px;
     }
 
-    .bg-putih button {
-      border-radius: 6px;
-      top: 70px;
-      left: 320px;
+
+    .header {
+      width: 35%;
+      margin: 50px auto 0px;
+      left: 22px;
+      color: white;
+      background: black;
+      opacity: 0.7;
+      text-align: center;
+      border: 0px solid #B0C4DE;
+      border-bottom: none;
+      border-radius: 10px 10px 0px 0px;
+      padding: 15px;
       position: relative;
-      width: 17%;
-      background-color: orange;
-      height: 40px;
-      box-shadow: 1px 2px 3px gray;
+      top: 90px;
+    }
+    
+    .tombol {
+      position:relative; 
+      top: 100px; 
+      border-radius: 4px; 
+      background-color:black; 
+      color:white;
+      left: 54%;
+      width: 7%;
+      border:0px; 
+      height: 40px; 
+      opacity:0.8;
+    }
+
+    .tombol-bayar{
+      position:relative; 
+      top: 100px; 
+      border-radius: 4px; 
+      background-color:black; 
+      color:white;
+      width: 7%;
+      left: 35%;
+      border:0px; 
+      height: 40px; 
+      opacity:0.8;
     }
 
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-fixed-top navbar-inverse">
+  
+<nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="Web_prototype_navbar.php">GamingWorld</a>
@@ -99,8 +139,28 @@ $tampung=mysqli_fetch_assoc($query);
         <li><a href="news.html">Gaming News</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <?php if(isset($_SESSION['nama'])){?>
+        <div class="dropdown">
+          <button
+            style="background-color: inherit;border: 0px;position: relative;margin-top: 10px;margin-left: 10px; right: 10px; font-family: inherit;"
+            class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            <li><a href="daftar.php"><span class="glyphicon glyphicon-user"></span> <?php echo $home?></a></li>
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Account Settings</a></li>
+            <li><a href="logout.php">Log Out</a></li>
+          </ul>
+
+        </div>
+
+        <?php }else{  ?>
+
         <li><a href="daftar.php"><span class="glyphicon glyphicon-user"></span> Daftar</a></li>
         <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Masuk</a></li>
+
+        <?php };?>
+
       </ul>
       <form class="navbar-form navbar-right" action="/action_page.php">
         <div class="input-group">
@@ -115,15 +175,25 @@ $tampung=mysqli_fetch_assoc($query);
     </div>
   </nav>
 
+  <div class="header">
+    <h2>Pembayaran</h2>
+  </div>
+
   <div class="bg-putih">
-  <h2>Pilih Metode Pembayaran</h2>
   <?php while($tampung=mysqli_fetch_assoc($query)):?>
     <div class="metode">
       <img class="pembayaran" src="images_catalog/<?php echo $tampung['gambar']?> ">
     </div>
     <?php endwhile; ?>
-    <button type="button" onclick="alert('Hello world!')">Bayar Sekarang</button>
   </div>
+
+  <a href="keranjang.php">
+  <button class="tombol-bayar" type="button">Pembayaran</button>
+  </a>
+
+  <button class="tombol" type="button">Checkout</button>
+
+  
 
 
 </body>

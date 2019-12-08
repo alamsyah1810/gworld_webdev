@@ -1,10 +1,14 @@
 <?php
 include("config_onlline.php");
 session_start();
+$_SESSION['sid']=session_id();
+
 $query=mysqli_query($con,"SELECT * FROM game where nama_game='$_GET[jenis]';");
 $tampung=mysqli_fetch_assoc($query);
 
-$query2=mysqli_query($con,"select nominal_voucher FROM voucher v, game g WHERE g.id_game = v.id_game and g.nama_game='$_GET[jenis]';");
+$query2=mysqli_query($con,"select g.id_game ,harga_voucher,id_voucher,nominal_voucher FROM voucher v, game g WHERE g.id_game = v.id_game and g.nama_game='$_GET[jenis]';");
+
+$_SESSION['nama_game']=$_GET['jenis'];
 
 if(isset($_SESSION['nama'])){
   $home=$_SESSION['nama'];
@@ -21,7 +25,7 @@ if(isset($_SESSION['nama'])){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href='css/bootstrap.min.css'>
-  <link rel="stylesheet" href='css/gamingworld-catalog.css'>
+  <link rel="stylesheet" href='css/gamingworld-catalog-steam.css'>
   <script src="script/jquery.min.js"></script>
   <script src='js/bootstrap.min.js'></script>
 
@@ -29,6 +33,37 @@ if(isset($_SESSION['nama'])){
 </head>
 
 <body>
+
+<style>
+    <?php if(isset($_SESSION['barang dipilih'])) {
+      ?>
+    .wallet-12
+    {
+    background-color:white;
+    }
+    <?php
+    }
+
+    ;
+    ?>
+
+    .col-md-12 .col-md-4 .wallet-12 .voucher {
+      position:relative;
+      margin-top: 10px;
+      width: 100%;
+      height: 60px;
+      bottom: 10px;
+      background-color: inherit;
+      border-radius: 5px;
+      left: 5px;
+      font-size: 17px;
+      color:gray;
+      box-shadow: 1px 2px 3px gray;
+      letter-spacing:1px;
+    }
+
+  </style>
+
   <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -48,7 +83,6 @@ if(isset($_SESSION['nama'])){
           </button>
           <ul class="dropdown-menu">
             <li><a href="#">Account Settings</a></li>
-            <li><a href="#">Point</a></li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
 
@@ -101,7 +135,9 @@ if(isset($_SESSION['nama'])){
 
           <div class="col-md-4" style="bottom:20px;margin-top:10px;text-align:center;">
             <div class="wallet-12">
-              <h4 style="position:relative;right:15px;"><?php echo $tampung2['nominal_voucher']?></h4>
+            <a href="aksicart-steam.php?voucher=<?php echo $tampung2['id_voucher']?>&nominal=<?php echo $tampung2['harga_voucher']?>">
+            <button class="voucher" type="button"><?php echo $tampung2['nominal_voucher']?></button>
+              </a>
             </div>
           </div>
           <?php endwhile; ?>
@@ -119,10 +155,20 @@ if(isset($_SESSION['nama'])){
         </div>
         <h3>Beli</h3>
         <p>Pastikan email anda sudah tepat</p>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Email" name="Email">
+        <div class="container">
+          <form action="updatekeranjang-steam.php" method="POST">
+            <div class="row">
+              <div class="col">
+
+                <input style="position:relative; left:80px; bottom:60px; width:48%; height:35px; color:black; border-radius:4px;border:1px;border-style:solid;border-color:gray;"
+                  class="email" type="text" name="email" placeholder=" Email" required>
+                <input style="position:relative; right:77px;bottom:18px; width:13%; height:35px; text-align:center; background-color: rgb(255,136,0); border-radius: 4px;"
+                  class="button" type="submit" value="Tambah ke keranjang" onclick="alert('Ditambahkan ke Keranjang')">
+              </div>
+
+            </div>
+          </form>
         </div>
-        <button type="button" onclick="alert('Ditambahkan ke Keranjang')">Tambah ke keranjang</button>
       </div>
       <br>
       <br>
