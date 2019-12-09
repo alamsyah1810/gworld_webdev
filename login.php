@@ -335,9 +335,7 @@
       <div class="daftar">
         <a href="daftar.php" class="btn">Daftar</a>
       </div>
-      <div class="lupa">
-        <a href="#" class="btn">Lupa Password?</a>
-      </div>
+      
     </div>
   </div>
   </div>

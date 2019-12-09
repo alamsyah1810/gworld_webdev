@@ -1,7 +1,17 @@
 <?php
 include("config_onlline.php");
 session_start();
-$query=mysqli_query($con,"SELECT nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v WHERE c.id_voucher=v.id_voucher and g.id_game=v.id_game and `delete`= 0 and id_temp_user='$_SESSION[sid]'");
+//$query=mysqli_query($con,"SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v WHERE c.id_voucher=v.id_voucher and g.id_game=v.id_game and `delete`= 0 and id_temp_user='$_SESSION[sid]'");
+
+if (isset($_SESSION['nama'])) {
+  $queryiduser=mysqli_query($con,"SELECT id_user, nama_user FROM `user` u where nama_user='$_SESSION[nama]'");
+  $cariiduser=mysqli_fetch_assoc($queryiduser);
+  
+  $query=mysqli_query($con,"SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v ,`user` u WHERE c.id_voucher=v.id_voucher and g.id_game=v.id_game and `delete`= 0 and u.id_user=c.id_user and c.id_user='$cariiduser[id_user]' ");
+} else {
+  $query=mysqli_query($con," SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v  WHERE c.id_voucher=v.id_voucher and `delete`= 0 and g.id_game=v.id_game and id_temp_user='$_SESSION[sid]'");
+}
+
 
 if(isset($_SESSION['nama'])){
   $home=$_SESSION['nama'];
@@ -112,7 +122,7 @@ if(isset($_SESSION['nama'])){
             <i class="fa fa-caret-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="#">Account Settings</a></li>
+            <li><a href="akun.php">Account Settings</a></li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
 
@@ -159,14 +169,32 @@ if(isset($_SESSION['nama'])){
       <p style="position:relative;font-weight:bold;left:370px; bottom:242px;">Email</p>
       <p style="left:416px; position:relative; bottom: 272px;"><?php echo $tampung['email_player'] ?></p>
     </div>
-    <a href="hapuscart.php">
+
+    <a href="hapuscart.php?">
     <button style="position:relative; float:right; right: 10px; border-radius: 4px; background-color:white;color:black; border:0px; height: 40px; border:1px; border-style:solid;bottom:58px;right:35px;" type="button">Hapus</button>
     </a>
+    
     <?php endwhile; ?>
   </div>
   <a href='pembayaran.php'>
   <button style="position:relative; float:right; right: 250px; top: 100px; border-radius: 4px; background-color:black; color:white;border:0px; height: 40px; opacity:0.8;" type="button">Pembayaran</button>
   </a>
+
+<script>
+
+//$(document).ready(function()
+    //  $(".delete").on("click", function() {
+
+    //    location.reload(true);
+
+
+
+   //   })
+//)
+
+</script>
+
+
 </body>
 
 </html>

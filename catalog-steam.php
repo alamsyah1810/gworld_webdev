@@ -6,6 +6,7 @@ $_SESSION['sid']=session_id();
 $query=mysqli_query($con,"SELECT * FROM game where nama_game='$_GET[jenis]';");
 $tampung=mysqli_fetch_assoc($query);
 
+
 $query2=mysqli_query($con,"select g.id_game ,harga_voucher,id_voucher,nominal_voucher FROM voucher v, game g WHERE g.id_game = v.id_game and g.nama_game='$_GET[jenis]';");
 
 $_SESSION['nama_game']=$_GET['jenis'];
@@ -82,7 +83,7 @@ if(isset($_SESSION['nama'])){
             <i class="fa fa-caret-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="#">Account Settings</a></li>
+            <li><a href="akun.php">Account Settings</a></li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
 

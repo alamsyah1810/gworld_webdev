@@ -82,7 +82,7 @@ if(isset($_SESSION['nama'])){
             <i class="fa fa-caret-down"></i>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="#">Account Settings</a></li>
+            <li><a href="akun.php">Account Settings</a></li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
 

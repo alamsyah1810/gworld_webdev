@@ -1,0 +1,107 @@
+body{
+    
+    background-color: rgb(255,136 ,0);
+    padding-top: 2%;
+}
+.badan1{
+  padding-top: 1%;
+}
+.badan{
+  padding-top: 1%;
+    width: 60%; 
+    padding-left: 15%;
+float: left;
+}
+
+  
+p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 170%;
+  padding-bottom: 8%;
+}
+
+.li1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 170%;
+}
+/* news 1*/
+
+.pic_atas1{
+  width: 99%;
+  padding-left: 1%;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+
+}
+
+.text_judul_tengah1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white  ;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+}
+
+
+
+/* news 2*/
+
+.pic_atas2{
+  width: 99%;
+  padding-left: 1%;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+
+}
+
+.text_judul_tengah2 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  -webkit-text-stroke-color: cadetblue;
+  -webkit-text-stroke-width: 1px;
+}
+
+
+/* news 3*/
+.pic1{
+  width: 90%;
+  height: auto;
+  padding-bottom: 2%;
+  padding-left: 10%;
+}
+
+.pic_atas3{
+  width: 99%;
+  padding-left: 1%;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.text_judul_tengah3 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  color: white;
+  -webkit-text-stroke-color: rgb(158, 255, 250);
+  -webkit-text-stroke-width: 1px;
+}
+
+
+.tabel_kanan{
+  float: left;
+  padding-top: 5%;
+  padding-left: 5%;
+}
+.vid_youtube{
+  padding-bottom: 5%;
+}
