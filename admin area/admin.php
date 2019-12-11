@@ -2,21 +2,12 @@
 
 <head>
   <title>Admin Area</title>
+  <title>Daftar voucher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href='table.css'>
 </head>
-<style>
-  table,
-  th,
-  td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
 
-  th,
-  td {
-    padding: 5px;
-    text-align: left;
-  }
-</style>
 
 <table style="width:30%, float:right, position:relative;">
   <tr>

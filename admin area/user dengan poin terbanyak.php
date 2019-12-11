@@ -6,21 +6,13 @@ $query=mysqli_query($con,"SELECT id_user, nama_user, status_user, poin_user FROM
 
 <head>
   <title>Poin terbanyak user</title>
+  <title>User terdaftar</title>
+  <title>Daftar voucher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href='table.css'>
 </head>
-<style>
-  table,
-  th,
-  td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
 
-  th,
-  td {
-    padding: 5px;
-    text-align: left;
-  }
-</style>
 <body>
 
 <div style='width: 300px;float:left:background-color:#eee;'>

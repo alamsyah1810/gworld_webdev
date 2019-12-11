@@ -8,21 +8,11 @@ $query=mysqli_query($con,"select v.nominal_voucher, g.nama_game, count(d.id_hash
 
 <head>
   <title>Pembelian voucher terbanyak</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href='table.css'>
 </head>
-<style>
-  table,
-  th,
-  td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
 
-  th,
-  td {
-    padding: 5px;
-    text-align: left;
-  }
-</style>
 <body>
 
 <div style='width: 300px;float:left:background-color:#eee;'>

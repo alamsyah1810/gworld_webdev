@@ -9,21 +9,12 @@ $query=mysqli_query($con,"SELECT m.id_metodepembayaran,COUNT(t.id_metodepembayar
 
 <head>
   <title>Metode pembayaran paling sering</title>
+  <title>Daftar voucher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href='table.css'>
 </head>
-<style>
-  table,
-  th,
-  td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
 
-  th,
-  td {
-    padding: 5px;
-    text-align: left;
-  }
-</style>
 <body>
 
 <div style='width: 300px;float:left:background-color:#eee;'>
@@ -34,10 +25,10 @@ $query=mysqli_query($con,"SELECT m.id_metodepembayaran,COUNT(t.id_metodepembayar
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th colspan="2" style="text-align:center;">Metode pembayaran paling sering</th>
+                      <th colspan="2" style="text-align:center;width:55%;">Metode pembayaran paling sering</th>
                     </tr>
                     <td style="text-align:center;">Metode</td>
-                    <td>Jumlah</td>
+                    <td style="text-align:center;">Jumlah</td>
                   </thead>
                   <tbody>
                     <?php while($tampung=mysqli_fetch_assoc($query)): ?>

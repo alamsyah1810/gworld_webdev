@@ -1,27 +1,18 @@
 <?php
 include("config_onlline.php");
-$query=mysqli_query($con,"select nama_metodepembayaran from metode_pembayaran where status_metodepembayaran = 1");
+$query=mysqli_query($con,"select * from metode_pembayaran where status_metodepembayaran=1");
 ?>
 
 <html>
 
 <head>
   <title>Metode Pembayaran</title>
+  <title>Daftar voucher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href='table.css'>
 </head>
-<style>
-  table,
-  th,
-  td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
 
-  th,
-  td {
-    padding: 5px;
-    text-align: left;
-  }
-</style>
 <body>
 
 <div style='width: 300px;float:left:background-color:#eee;'>
@@ -32,14 +23,20 @@ $query=mysqli_query($con,"select nama_metodepembayaran from metode_pembayaran wh
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th>Metode Pembayaran</th>
-                      
+                      <th style="text-align:center;" colspan="3">Metode Pembayaran</th>
+                    </tr>
+                    <tr style="background-color:#dddddd;">
+                      <td style="text-align:center;">Metode Pembayaran</th>
+                      <td style="text-align:center;">ID Metode Pembayaran</th>
+                      <td style="text-align:center;">Logo</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php while($tampung=mysqli_fetch_assoc($query)): ?>
                     <tr>
-                    <td style="text-align:center;"><?php echo $tampung['nama_metodepembayaran']   ?></td>
+                    <td style="text-align:center;width:30%;"><?php echo $tampung['nama_metodepembayaran']   ?></td>
+                    <td style="text-align:center;width:30%;"><?php echo $tampung['id_metodepembayaran']   ?></td>
+                    <td style="text-align:center;"><img style="width: 54%;height: 30px;" class="steam" src="images_catalog/<?php echo $tampung['gambar']?> "></td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
