@@ -25,7 +25,7 @@ $query=mysqli_query($con,"SELECT id_user, nama_user, status_user, poin_user FROM
                     <tr>
                       <th colspan="2">User dengan poin terbanyak</th>
                     </tr>
-                    <tr>
+                    <tr style="background-color:#dddddd;">
                       <td style="text-align:center;">User</td>
                       <td style="text-align:center;">Poin</td>
                     </tr>

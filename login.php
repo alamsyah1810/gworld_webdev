@@ -280,7 +280,7 @@
   <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="web_prototype_navbar.php">GamingWorld</a>
+        <a class="navbar-brand" href="index.php">GamingWorld</a>
       </div>
       <ul class="nav navbar-nav">
         <li><a href="#">Gaming News</a></li>

@@ -13,5 +13,5 @@ $nohp = $_POST['nohp'];
  
 $query = mysqli_query($con,"insert into `user` values('$idbaru','$password','$username','$email','$nohp','1','0');");
 
-header("Location: Web_prototype_navbar.php");
+header("Location: index.php");
 ?>

@@ -2,13 +2,18 @@
 
 require 'functions.php';
 
-$id_cart=$_GET['id_cart'];
+$id=$_GET['id_cart'];
 
-if( hapuscart($id_cart)>0) {
+header("Location:keranjang.php");
 
+if(hapus($id) > 0) {
+  
 }else{
+   
 
 };
+
+
 
 ?>
 

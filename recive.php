@@ -15,7 +15,7 @@ if($cek>0){
     alert("selamat datang $username")
     window.location="login.php"
     </script>';
-   header("Location: Web_prototype_navbar.php");
+   header("Location: index.php");
   
    $_SESSION["nama"]=$username;
 }else{

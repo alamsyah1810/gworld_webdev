@@ -1,11 +1,16 @@
 <?php
 
-session_start();
-include("config_onlline.php");
+$base_url   = "http://jmswijaya.com/phpmyadmin/";
+$servername = "jmswijaya.com";
+$username   = "isb18";
+$password   = "Isb_2018";
+$dbname     = "store18_5";
+
+$con = mysqli_connect($servername, $username, $password, $dbname);
 
 function query($query) {
-    global $conn;
-    $result=mysqli_query($conn,$query);
+    global $con;
+    $result=mysqli_query($con,$query);
     $rows=[];
 
     while ($row=mysqli_fetch_assoc($result)) {
@@ -14,11 +19,14 @@ function query($query) {
     return $rows;
 }
 
-function hapus($id_cart) {
-    global $conn;
-    mysqli_query($conn, "delete * from cart where id_cart = '$id_cart';");
 
-    return mysqli_affected_rows($conn);
+function hapus($id) {
+    global $con;
+    mysqli_query($con,"delete from cart where id_cart = $id");
+
+    return mysqli_affected_rows($con);
 }
+
+
 
 ?>

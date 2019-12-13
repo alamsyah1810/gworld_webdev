@@ -7,7 +7,7 @@ if (isset($_SESSION['nama'])) {
   $queryiduser=mysqli_query($con,"SELECT id_user, nama_user FROM `user` u where nama_user='$_SESSION[nama]'");
   $cariiduser=mysqli_fetch_assoc($queryiduser);
   
-  $query=mysqli_query($con,"SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v ,`user` u WHERE c.id_voucher=v.id_voucher and g.id_game=v.id_game and `delete`= 0 and u.id_user=c.id_user and c.id_user='$cariiduser[id_user]' ");
+  $query=mysqli_query($con,"SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v ,`user` u WHERE c.id_voucher=v.id_voucher and g.id_game=v.id_game and u.id_user=c.id_user and c.id_user='$cariiduser[id_user]' ");
 } else {
   $query=mysqli_query($con," SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v  WHERE c.id_voucher=v.id_voucher and `delete`= 0 and g.id_game=v.id_game and id_temp_user='$_SESSION[sid]'");
 }
@@ -107,7 +107,7 @@ if(isset($_SESSION['nama'])){
 <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="Web_prototype_navbar.php">GamingWorld</a>
+        <a class="navbar-brand" href="index.php">GamingWorld</a>
       </div>
       <ul class="nav navbar-nav">
         <li><a href="news.html">Gaming News</a></li>
@@ -170,7 +170,7 @@ if(isset($_SESSION['nama'])){
       <p style="left:416px; position:relative; bottom: 272px;"><?php echo $tampung['email_player'] ?></p>
     </div>
 
-    <a href="hapuscart.php?">
+    <a href="hapus.php?id=<?= $tampung['id_cart']; ?>">
     <button style="position:relative; float:right; right: 10px; border-radius: 4px; background-color:white;color:black; border:0px; height: 40px; border:1px; border-style:solid;bottom:58px;right:35px;" type="button">Hapus</button>
     </a>
     

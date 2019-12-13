@@ -21,18 +21,18 @@ $query=mysqli_query($con,"SELECT * FROM transksi");
   </div>
 
     <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
-        <table class="table table-striped">
+        <table style="width:50%;" class="table table-striped">
             <thead>
                 <tr>
                     <th style="text-align:center;" colspan="6">Histori transaksi</th>
                 </tr>
-                <tr>    
-                    <td style="text-align:center;">id transaksi</td>
-                    <td style="text-align:center;">id user</td>
-                    <td style="text-align:center;">id temp user</td>
-                    <td style="text-align:center;">tanggal</td>
-                    <td style="text-align:center;">harga</td>
-                    <td style="text-align:center;">Metode pembayaran</td>
+                <tr style="background-color:#dddddd;">    
+                    <td style="text-align:center;">ID Transaksi</td>
+                    <td style="text-align:center;">ID User</td>
+                    <td style="text-align:center;">ID Temp User</td>
+                    <td style="text-align:center;">Tanggal</td>
+                    <td style="text-align:center;">Harga</td>
+                    <td style="text-align:center;">Metode Pembayaran</td>
                 </tr>
             </thead>
             <tbody>

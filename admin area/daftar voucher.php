@@ -40,8 +40,8 @@ $query=mysqli_query($con,"SELECT id_game, nama_game, status_game, nama_jenisgame
                     <td style="text-align:center;width:8%;"><?php echo $tampung['nama_game']   ?></td>
                     <td style="text-align:center;width:8%;"><?php echo $tampung['status_game']   ?></td>
                     <td style="text-align:center;width:8%;"><?php echo $tampung['nama_jenisgame']   ?></td>
-                    <td style="text-align:center;"><img style="width: 39%;height: 40px;" class="steam" src="images_catalog/<?php echo $tampung['gambar']?> "></td>
-                    <td style="text-align:justify;padding-left:130px;padding-right:130px;"><?php echo $tampung['deskripsi']   ?></td>
+                    <td style="text-align:center;"><img style="height: 40px;" class="steam" src="images_catalog/<?php echo $tampung['gambar']?> "></td>
+                    <td style="text-align:justify;padding-left:20px;padding-right:20px;width:50%;"><?php echo $tampung['deskripsi']   ?></td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
