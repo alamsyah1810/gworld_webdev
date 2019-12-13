@@ -320,37 +320,78 @@ if(isset($_SESSION['nama'])){
       <br>
     </div>
     <div class="col-md-12">
-      <?php while ($tampung=mysqli_fetch_assoc($query)):  ?>
-
       <div class="col-md-3">
-        <a href='catalog-pubgm.php?jenis=<?php echo $tampung['nama_game']  ?>'>
-          <img style="box-shadow: 2px 3px 4px #ce5816;" class="img-responsive game1"
-            src="Images/<?php echo $tampung['gambar'] ?>">
+      <a href='catalog-steam.php?jenis=Free Fire'>
+          <img class="img-responsive game1" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/5.jpg'>
         </a>
       </div>
-      <?php  endwhile ;?>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Mobile Legends Bang Bang'>
+          <img class="img-responsive game2" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/11.jpg'>
+        </a>
+      </div>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=PUBG Mobile'>
+          <img class="img-responsive game3" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/15.jpg'>
+        </a>
+      </div>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Speed Drifters'>
+          <img class="img-responsive game8" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/17.jpg'>
+        </a>
+        <br>
+      </div>
     </div>
 
+    <div class="col-md-12">
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Arena of Valor'>
+          <img class="img-responsive game5"  style="box-shadow: 2px 3px 4px #ce5816;" src='Images/1.jpg'>
+        </a>
+      </div>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Game of Sultans'>
+          <img class="img-responsive game6" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/8.jpg'>
+        </a>
+      </div>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Lumia Saga'>
+          <img class="img-responsive game7" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/10.jpg'>
+        </a>
+      </div>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Heroes Evolved'>
+          <img class="img-responsive game8"  style="box-shadow: 2px 3px 4px #ce5816;" src='Images/9.jpg'>
+        </a>
+        <br>
+      </div>
+    </div>
 
-
-
+    <div class="col-md-12">
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Ragnarok'>
+          <img class="img-responsive game5" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/16.jpg'>
+        </a>
+      </div>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Mobile Legend Adventure'>
+          <img class="img-responsive game6" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/12.jpg'>
+        </a>
+      </div>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Crisis Action'>
+          <img class="img-responsive game7" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/2.jpg'>
+        </a>
+      </div>
+      <div class="col-md-3">
+      <a href='catalog-steam.php?jenis=Call of Duty Mobile'>
+          <img class="img-responsive game2" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/3.jpg'>
+        </a>
+      </div>
+    </div>
   </div>
   <br>
   <br>
-
-  <nav aria-label="Page navigation">
-    <ul class="pagination">
-      <li>
-
-      </li>
-      <?php for($i=1;$i<=$jumlahhalaman;$i++):?>
-      <li><a href="?halaman=<?php echo $i ?>"><?php echo $i ?></a></li>
-      <?php endfor; ?>
-      <li>
-
-      </li>
-    </ul>
-  </nav>
 
   <div class="webinfo bg-white" id="info">
     <div class="row">
