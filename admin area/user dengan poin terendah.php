@@ -6,20 +6,11 @@ $query=mysqli_query($con,"SELECT id_user, nama_user, status_user, poin_user FROM
 
 <head>
   <title>Poin terendah user</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href='table.css'>
 </head>
-<style>
-  table,
-  th,
-  td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
 
-  th,
-  td {
-    padding: 5px;
-    text-align: left;
-  }
 </style>
 <body>
 
@@ -27,13 +18,13 @@ $query=mysqli_query($con,"SELECT id_user, nama_user, status_user, poin_user FROM
     <?php include "menu.php" ; ?>
   </div>
 
- <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
+  <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
                 <table class="table table-striped">
                   <thead>
-                  <tr>
-                      <th colspan="2">User dengan poin terbanyak</th>
-                    </tr>
                     <tr>
+                      <th colspan="2">User dengan poin terendah</th>
+                    </tr>
+                    <tr style="background-color:#dddddd;">
                       <td style="text-align:center;">User</td>
                       <td style="text-align:center;">Poin</td>
                     </tr>

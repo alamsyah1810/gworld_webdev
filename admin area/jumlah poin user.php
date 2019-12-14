@@ -7,7 +7,6 @@ $query=mysqli_query($con,"SELECT * FROM user");
 
 <head>
     <title>Poin User</title>
-    <title>Daftar voucher</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href='table.css'>

@@ -7,10 +7,10 @@
     <td><a href="status transaksi.php">Status transaksi</a></td>
   </tr>
   <tr>
-    <td><a href="game dengan voucher top-up.php">Pembelian voucher jenis top-up</a></td>
+    <td><a href="game dengan voucher reedem.php?jenis=2">Pembelian voucher jenis top-up</a></td>
   </tr>
   <tr>
-    <td><a href="game dengan voucher reedem.php">Pembelian voucher jenis reedem</a></td>
+    <td><a href="game dengan voucher reedem.php?jenis=1">Pembelian voucher jenis reedem</a></td>
   </tr>
   <tr>
     <td><a href="jumlah poin user.php">Jumlah poin user</a></td>

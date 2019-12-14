@@ -3,7 +3,7 @@ session_start();
 include("config_onlline.php");
 
 
-$jumlahdata=mysqli_query($con,"SELECT count(nama_game) as 'aa' FROM game where jenis_game='2'");
+/*$jumlahdata=mysqli_query($con,"SELECT count(nama_game) as 'aa' FROM game where jenis_game='2'");
 $aa=mysqli_fetch_assoc($jumlahdata);
 $dataperhalaman= 4;
 $jumlahhalaman= ceil($aa['aa']/$dataperhalaman);
@@ -15,7 +15,7 @@ if(isset($_GET['halaman'])){
 };
 $awal=($halamanaktif*$dataperhalaman)-$dataperhalaman;
 
-$query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$dataperhalaman");
+$query=mysqli_query($con,"SELECT * FROM game WHERE jenis_game='2'limit $awal,$dataperhalaman");*/
 
 if(isset($_SESSION['nama'])){
   $home=$_SESSION['nama'];
@@ -462,7 +462,7 @@ if(isset($_SESSION['nama'])){
   <div class="cart">
     <a href="keranjang.php">
       <img style="position:fixed; width:3%; height: 42px; float:left; left:20px; bottom: 20px;"
-        src='Images/black-shopping-cart-icon-22.jpg'>
+        src='Images/black-shopping-cart-icon-22.png'>
       </a>
   </div>
 

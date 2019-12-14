@@ -220,7 +220,6 @@ if(isset($_SESSION['nama'])){
     <p class="poin">Point</p>
     <p class="poin-user"><?php echo $tampung['poin_user'] ?></p>
 
-    <button class="button-akun" type="button">Ubah Data</button>
     
 
   </div>

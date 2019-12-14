@@ -7,7 +7,6 @@ $query=mysqli_query($con,"select * from metode_pembayaran where status_metodepem
 
 <head>
   <title>Metode Pembayaran</title>
-  <title>Daftar voucher</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href='table.css'>

@@ -9,7 +9,6 @@ $query=mysqli_query($con,"SELECT m.id_metodepembayaran,COUNT(t.id_metodepembayar
 
 <head>
   <title>Metode pembayaran paling sering</title>
-  <title>Daftar voucher</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href='table.css'>

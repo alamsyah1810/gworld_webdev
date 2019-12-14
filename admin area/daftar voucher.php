@@ -37,7 +37,13 @@ $query=mysqli_query($con,"SELECT id_game, nama_game, status_game, nama_jenisgame
                     <?php while($tampung=mysqli_fetch_assoc($query)): ?>
                     <tr>
                     <td style="text-align:center;width:8%;"><?php echo $tampung['id_game']   ?></td>
-                    <td style="text-align:center;width:8%;"><?php echo $tampung['nama_game']   ?></td>
+                    
+                    <td style="text-align:center;width:8%;">
+                    <a href="stok_voucher_game.php?jenis=<?php echo $tampung['nama_game']  ?>">
+                    <?php echo $tampung['nama_game']   ?>
+                    </a>
+                    </td>
+                   
                     <td style="text-align:center;width:8%;"><?php echo $tampung['status_game']   ?></td>
                     <td style="text-align:center;width:8%;"><?php echo $tampung['nama_jenisgame']   ?></td>
                     <td style="text-align:center;"><img style="height: 40px;" class="steam" src="images_catalog/<?php echo $tampung['gambar']?> "></td>
@@ -47,6 +53,5 @@ $query=mysqli_query($con,"SELECT id_game, nama_game, status_game, nama_jenisgame
                   </tbody>
                 </table>
               </div>
-
     </body>
     </html>

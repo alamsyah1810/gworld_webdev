@@ -1,6 +1,6 @@
 <?php
 include("config_onlline.php");
-$query=mysqli_query($con,"select id_transksi, status_transksi, if(status_transksi =1,'ongoing','done') as status from transksi");
+$query=mysqli_query($con,"SELECT t.id_transksi, t.`date`, t.total_harga, u.nama_user, t.id_metodepembayaran, t.no_rekening, t.id_temp_user, t.sub_total_harga, s.nama_statusvoucher FROM transksi t, user u, status_voucher s where t.id_user = u.id_user and s.id_status_voucher = t.id_statusvoucher;");
 ?>
 <html>
 
