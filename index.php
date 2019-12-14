@@ -462,8 +462,8 @@ if(isset($_SESSION['nama'])){
   <div class="cart">
     <a href="keranjang.php">
       <img style="position:fixed; width:3%; height: 42px; float:left; left:20px; bottom: 20px;"
-        src='images/black-shopping-cart-icon-22.png'>
-      <a href="keranjang.php">
+        src='Images/black-shopping-cart-icon-22.jpg'>
+      </a>
   </div>
 
 </body>
