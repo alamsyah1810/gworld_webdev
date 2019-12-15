@@ -8,17 +8,8 @@ if (isset($_SESSION['nama'])) {
   $cariiduser=mysqli_fetch_assoc($queryiduser);
   
   $query=mysqli_query($con,"SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v ,`user` u WHERE c.id_voucher=v.id_voucher and g.id_game=v.id_game and u.id_user=c.id_user and c.id_user='$cariiduser[id_user]' ");
-
-  //$sql = mysqli_query($con, $query) or die(mysqli_error($con));
-  $hasil = mysqli_fetch_all($query);
-  $rows = mysqli_num_rows($query);
-
 } else {
   $query=mysqli_query($con," SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v  WHERE c.id_voucher=v.id_voucher and `delete`= 0 and g.id_game=v.id_game and id_temp_user='$_SESSION[sid]'");
-
-  //$sql = mysqli_query($con, $query) or die(mysqli_error($con));
-  $hasil = mysqli_fetch_all($query);
-  $rows = mysqli_num_rows($query);
 }
 
 
@@ -26,28 +17,7 @@ if(isset($_SESSION['nama'])){
   $home=$_SESSION['nama'];
 
 }else{}
-
-if (isset($_POST['hapus'])){
-  $_SESSION['id']=$_POST['hapus'];
-  header("location: hapuscart.php");
-}
-
-if (isset($_POST['ubah'])){
-  $_SESSION['id']=$_POST['ubah'];
-  header("location: test.php");
-}
-/*
-  if (isset($_SESSION['nama'])){
-      //$log = $_SESSION['login'];
-      //$query = "SELECT * FROM products";
-      $sql = mysqli_query($con, $query) or die(mysqli_error($con));
-      $hasil = mysqli_fetch_assoc($sql);
-      $rows = mysqli_num_rows($sql);}
-
-*/
-
-
-      ?>
+?>
 
 
 <!DOCTYPE html>
@@ -100,12 +70,11 @@ if (isset($_POST['ubah'])){
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       top: 20px;
       left: 30px;
-      
     }
 
     .bg-putih .back-voucher {
       background-color: white;
-      width: 80%;
+      width: 82%;
       color: black;
       top: 20px;
       left: 40px;
@@ -186,10 +155,9 @@ if (isset($_POST['ubah'])){
   </div>
 
   <div style="overflow: auto;" class="bg-putih">
-   
-  
- <?php while($tampung=mysqli_fetch_assoc($query)) :?>
+    <?php while($tampung=mysqli_fetch_assoc($query)) :?>
     <div style="margin-bottom: 20px;" class="back-voucher">
+
       <p style="left:165px; position:relative; top: 6px; font-weight:bold;"><?php echo $tampung['nama_game'] ?></p>
       <p style="left:165px; position:relative; bottom: 2px;"><?php echo $tampung['nominal_voucher'] ?></p>
       <p style="position:relative;left: 370px; bottom: 54px; font-weight: bold;">Harga</p>
@@ -201,52 +169,12 @@ if (isset($_POST['ubah'])){
       <p style="position:relative;font-weight:bold;left:370px; bottom:242px;">Email</p>
       <p style="left:416px; position:relative; bottom: 272px;"><?php echo $tampung['email_player'] ?></p>
     </div>
+
     <a href="hapus.php?id=<?= $tampung['id_cart']; ?>">
     <button style="position:relative; float:right; right: 10px; border-radius: 4px; background-color:white;color:black; border:0px; height: 40px; border:1px; border-style:solid;bottom:58px;right:35px;" type="button">Hapus</button>
     </a>
-    <?php endwhile; ?>
- 
-
-<?php
-    $i = 0;
     
-    while($i < $rows){ ?>
-       <div style="margin-bottom: 20px;" class="back-voucher">
-      <tr>
-      <!--<td><?php echo $hasil[$i][0]?></td>-->
-      <p style="left:165px; position:relative; top: 6px; font-weight:bold;"><td><?php echo $hasil[$i][1]?></td></p>
-      <p style="left:165px; position:relative; bottom: 4px;"><td><?php echo $hasil[$i][2]?></td></p>
-      <p style="position:relative;left: 370px; bottom: 54px; font-weight: bold;">Harga</p>
-      <p style="position:relative;left: 415px; bottom: 84px;">IDR</p>
-      <p style="left:445px; position:relative; bottom: 114px;"><td><?php echo $hasil[$i][3]?></td></p>
-      <img style="border-radius:4px;left: 11px;width:19%; height:55px; bottom:138px; position: relative;" src='images_catalog/<?php echo $hasil[$i][6]?> ' alt="" srcset="">
-      <p style="position:relative;font-weight:bold;left:168px; bottom:160px;">ID</p>
-      <p style="left:195px; position:relative; bottom: 190px;"><td ><?php echo $hasil[$i][4]?></td></p>
-      <p style="position:relative;font-weight:bold;left:370px; bottom:232px;">Email</p>
-      <p style="left:416px; position:relative; bottom: 262px;"><td><?php echo $hasil[$i][5]?></td></p>
-     <!-- <td><?php echo $hasil[$i][6]?></td> -->
-    <!--  <td> -->
-      <form action="keranjang.php" method="post" style="position:relative; ">
-     
-      <button type="submit" name = "hapus" style="position:relative; float:right; border-radius: 4px; background-color:white;color:black; border:0px; height: 40px; border:1px; border-style:solid;bottom:308px;left:95px;" value ="<?php echo $hasil[$i][0]?>">Hapus</button>
-      </form> 
-     <!--  </td> -->
-      
-  </tr>
-  </div>
-                
-                <?php
-                $i++; 
-                }
-            ?>
-            </tbody></table>
-            <?php
-
-    ?>
-
-
-
-
+    <?php endwhile; ?>
   </div>
   <a href='pembayaran.php'>
   <button style="position:relative; float:right; right: 250px; top: 100px; border-radius: 4px; background-color:black; color:white;border:0px; height: 40px; opacity:0.8;" type="button">Pembayaran</button>

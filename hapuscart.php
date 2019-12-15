@@ -1,13 +1,10 @@
+
 <?php
 session_start();
+$id = $_SESSION['id'];
 include("config_onlline.php");
 
-$query11=mysqli_query($con,"SELECT count(id_cart) as'aa' FROM `cart`");
-$hasil11=mysqli_fetch_assoc($query11);
-
-//$update=mysqli_query($con,"update cart set `delete`=1 where id_cart='$hasil11[aa]'");
-$update=mysqli_query($con,"update cart set `delete`=1 where id_cart='$hasil11[aa]'");
-
-header("Location: keranjang.php");
-
+    $query = "DELETE FROM cart WHERE id_cart = $id";
+    $sql = mysqli_query ($con, $query) or die(mysqli_error($con));
+    header("location: keranjang.php");
 ?>

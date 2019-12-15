@@ -25,7 +25,7 @@ $tampung=mysqli_fetch_assoc($query);
                 <table class="table table-striped">
                   <thead>
                     <tr>
-                      <th style="text-align:center;" colspan="6">Game dengan voucher reedem</th>
+                      <th style="text-align:center;" colspan="6">Detail Voucher Game</th>
                     </tr>
                     <tr style="background-color:#dddddd;">
                       <td style="text-align:center;">ID Game</td>
