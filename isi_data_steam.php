@@ -1,8 +1,7 @@
 <?php
 include("config_onlline.php");
 session_start();
-$query=mysqli_query($con,"select * from metode_pembayaran");
-$tampung=mysqli_fetch_assoc($query);
+$_SESSION['sid']=session_id();
 
 if(isset($_SESSION['nama'])){
   $home=$_SESSION['nama'];
@@ -15,7 +14,12 @@ if(isset($_SESSION['nama'])){
 <html>
 
 <head>
-  <title>Pembayaran - GamingWorld</title>
+
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <title>Gaming World</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href='css/bootstrap.min.css'>
@@ -25,7 +29,7 @@ if(isset($_SESSION['nama'])){
   <style>
     body {
       background-color: rgb(255, 136, 0);
-      color: white;
+      opacity: 0, 5;
     }
 
     .container-fluid {
@@ -44,49 +48,11 @@ if(isset($_SESSION['nama'])){
       opacity: 0.9;
     }
 
-    .bg-putih {
-      width: 35%;
-      top: 83px;
-      border-radius: 0px 0px 10px 10px;
-      left: 34%;
-      height: 480px;
-      background-color: white;
-      position: relative;
-      border: 1px solid #B0C4DE;
-    }
-
-    .bg-putih h2 {
-      position: relative;
-      color: gray;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      top: 20px;
-      left: 30px;
-    }
-
-    .bg-putih .pembayaran {
-      position: relative;
-      top: 15px;
-      
-    }
-
-    .bg-putih .metode {
-      top: 20px;
-      position: relative;
-      margin-top: 10px;
-      border-color: rgb(170, 170, 170);
-      box-shadow: 1px 2px 3px gray;
-      border-radius: 6px;
-      text-align:center;
-      width: 60%;
-      left: 100px;
-      height: 70px;
-    }
 
 
     .header {
-      width: 35%;
+      width: 40%;
       margin: 50px auto 0px;
-      left: 22px;
       color: white;
       background: black;
       opacity: 0.7;
@@ -94,42 +60,32 @@ if(isset($_SESSION['nama'])){
       border: 0px solid #B0C4DE;
       border-bottom: none;
       border-radius: 10px 10px 0px 0px;
-      padding: 15px;
+      padding: 20px;
       position: relative;
-      top: 90px;
-    }
-    
-    .tombol {
-      position:relative; 
-      top: 100px; 
-      border-radius: 4px; 
-      background-color:black; 
-      color:white;
-      left: 54%;
-      width: 7%;
-      border:0px; 
-      height: 40px; 
-      opacity:0.8;
+      top: 120px;
     }
 
-    .tombol-bayar{
-      position:relative; 
-      top: 100px; 
-      border-radius: 4px; 
-      background-color:black; 
-      color:white;
-      width: 7%;
-      left: 35%;
-      border:0px; 
-      height: 40px; 
-      opacity:0.8;
+    /* style the container */
+    .container {
+      background-position: center;
+      border-radius: 0px 0px 10px 10px;
+      position: relative;
+      top: 115px;
+      height: 220px;
+      padding-top: 100px;
+      margin: 0px auto;
+      width: 40%;
+      background-color: white;
+      border: 1px solid #B0C4DE;
     }
 
+   
   </style>
 </head>
 
 <body>
-  
+
+
 <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -165,24 +121,23 @@ if(isset($_SESSION['nama'])){
   </nav>
 
   <div class="header">
-    <h2>Pembayaran</h2>
+    <h2>Masukan Email</h2>
   </div>
 
-  <div class="bg-putih">
-  <?php while($tampung=mysqli_fetch_assoc($query)):?>
-    <div class="metode">
-      <img class="pembayaran" src="images_catalog/<?php echo $tampung['gambar']?> ">
-    </div>
-    <?php endwhile; ?>
+  <form action="updatekeranjang-steam.php" method="POST">
+  <div class="container">
+  <div class="col">
+      <input style="position:relative; left:60px; bottom:60px; width:78%; height:35px; color:black; border-radius:4px;border:1px;border-style:solid;border-color:gray;"
+            class="email" type="text" name="email" placeholder=" Email" required>
+      <input style="position:relative; left:169px;bottom:28px; width:39%; height:35px; text-align:center; background-color: black; color:white;opacity:0.8; border-radius: 4px;"
+            class="button" type="submit" value="Lanjut ke Checkout">
+   </div>
   </div>
-
-  <a href="checkout.php">
-  <button class="tombol-bayar" type="button">Kembali</button>
-  </a>
-  <a href="checkout2.php">
-  <button class="tombol" type="button">Batal</button>
-
+  </form>
   
+  </div>
+  </div>
+
 
 
 </body>

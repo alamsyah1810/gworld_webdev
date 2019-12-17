@@ -221,24 +221,24 @@
     <form method="post" action="register_recive.php">
         <div class="username">
             <label>Username</label>
-            <input type="text" name="username" value="">
+            <input type="text" name="username" value="" required>
         </div>
         <div class="email">
             <label>Email</label>
-            <input type="text" name="email" value="">
+            <input type="text" name="email" value="" required>
         </div>
         <div class="password">
             <label>Password</label>
-            <input type="password" name="password">
+            <input type="password" name="password" required>
         </div>
         <div class="confirmpassword">
             <label>Confirm password</label>
-            <input type="password" name="confirmpassword">
+            <input type="password" name="confirmpassword" required>
         </div>
 
         <div class="nohp">
             <label>NO HP</label>
-            <input type="text" name="nohp">
+            <input type="text" name="nohp" required>
         </div>
         <div class="submit">
             <button type="submit" class="btn" name="register_btn">Register</button>

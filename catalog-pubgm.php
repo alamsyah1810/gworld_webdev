@@ -30,6 +30,97 @@ if(isset($_SESSION['nama'])){
   <script src="script/jquery.min.js"></script>
   <script src='js/bootstrap.min.js'></script>
 
+  <style>
+body {
+    background-color: rgb(255, 136, 0);
+    color: white;
+  }
+
+  .container-fluid {
+    padding: 3px 15px;
+  }
+
+  .navbar {
+    margin-bottom: 0;
+    z-index: 9999;
+    border: 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    letter-spacing: 2px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+    opacity: 0.9;
+  }
+
+  .catalog-steam .steam {
+    max-width: 500px;
+    padding-top: 0px;
+    padding-left: 25px;
+  }
+
+  .steam-wallet .steam-text h3 {
+    padding-left: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .steam-wallet .steam-text p {
+    padding-left: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    padding-right: 50px;
+  }
+
+  .bgputih {
+    width: 50%;
+    height: 550px;
+    position: relative;
+    border-radius: 0px 0px 10px 10px;
+    left: 380px;
+    border: 1px solid #B0C4DE;
+    top: 110px;
+    background-color: white;
+  }
+
+  .bgputih .col-md-12 {
+    top: 5px;
+    right: 5px;
+  }
+
+  .deskripsi {
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    bottom: 15px;
+    opacity: 0.8;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .steam {
+    width: 55%;
+    position: relative;
+    border-radius: 6px;
+    bottom: 35px;
+    left: 160px;
+  }
+
+  .header {
+      width: 50%;
+      left: 380px;
+      color: white;
+      top: 110px;
+      background: black;
+      opacity: 0.7;
+      text-align: center;
+      border: 0px solid #B0C4DE;
+      border-radius: 10px 10px 0px 0px;
+      padding: 20px;
+      position: relative;
+    
+    }
+
+
+    </style>
 
 </head>
 
@@ -64,14 +155,12 @@ if(isset($_SESSION['nama'])){
 
   </style>
 
-  <nav class="navbar navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="index.php">GamingWorld</a>
       </div>
-      <ul class="nav navbar-nav">
-        <li><a href="news.html">Gaming News</a></li>
-      </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <?php if(isset($_SESSION['nama'])){?>
         <div class="dropdown">
@@ -96,46 +185,24 @@ if(isset($_SESSION['nama'])){
         <?php };?>
 
       </ul>
-      <form class="navbar-form navbar-right" action="/action_page.php">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
+     
     </div>
   </nav>
 
-  <div class="col-md-12" style="margin-top: 100px;">
-    <div class="col-md-5">
-      <div class="catalog-steam">
-        <img class="steam" src="images_catalog/<?php echo $tampung['gambar']?> ">
-      </div>
+  <div class="header">
+    <h2><?php echo $tampung['nama_game']?></h2>
+  </div>
 
-      <div class="steam-wallet">
-        <div class="steam-text">
-          <h3><?php echo $tampung['nama_game']?></h3>
-          <p><?php echo $tampung['deskripsi']?></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-7">
+     
       <div class="bgputih">
-        <div class="putih-bundar">
-          <div class="orange-bundar">
-            <h2 class="satu">1</h2>
-          </div>
-        </div>
         <h3>Pilih Voucher</h3>
+        <img class="steam" src="images_catalog/<?php echo $tampung['gambar']?> ">
+        <p class="deskripsi"><?php echo $tampung['deskripsi']?></p>
         <div class="col-md-12">
           <?php while ($tampung2=mysqli_fetch_assoc($query2)): ?>
           <div class="col-md-4" style="bottom: 20px;margin-top:10px;text-align:center;position:relative;">
             <div class="wallet-12">
-              <a
-                href="aksicart.php?voucher=<?php echo $tampung2['id_voucher']?>&nominal=<?php echo $tampung2['harga_voucher']?>">
+              <a href="aksicart.php?voucher=<?php echo $tampung2['id_voucher']?>&nominal=<?php echo $tampung2['harga_voucher']?>">
                 <button class="voucher" type="button"><?php echo $tampung2['nominal_voucher']?></button>
               </a>
             </div>
@@ -147,32 +214,7 @@ if(isset($_SESSION['nama'])){
       <br>
       <br>
 
-      <div class="bgputih3">
-        <div class="putih-bundar3">
-          <div class="orange-bundar3">
-            <h2 class="tiga">2</h2>
-          </div>
-        </div>
-
-        <h3>Beli</h3>
-        <p>Pastikan email dan ID anda sudah tepat</p>
-        <div class="container">
-          <form action="updatekeranjang.php" method="POST">
-            <div class="row">
-              <div class="col">
-
-                <input style="position:relative; left:80px; bottom:60px; width:48%; height:35px; color:black; border-radius:4px;border:1px;border-style:solid;border-color:gray;"
-                  class="email" type="text" name="email" placeholder=" Email" required>
-                <input style="position:relative; width:48%; height:35px; right:485px; bottom:10px; color:black;border-radius:4px;border:1px;border-style:solid;border-color:gray;"
-                  class="id" type="text" name="id" placeholder=" ID" required>
-                <input
-                  style="position:relative; left:490px; width:13%; height:35px; text-align:center; background-color: rgb(255,136,0); border-radius: 4px;"
-                  class="button" type="submit" value="Tambah ke keranjang" onclick="alert('Ditambahkan ke Keranjang')">
-              </div>
-
-            </div>
-          </form>
-        </div>
+     
 
         <!-- <div class="form-group">
           <input type="text"  class="form-control" placeholder="Email" name="email">
@@ -191,12 +233,7 @@ if(isset($_SESSION['nama'])){
   </div>
   </div>
 
-  <div class="cart">
-    <a href="keranjang.php">
-      <img style="position:fixed; width:3%; height: 42px; float:left; left:20px; bottom: 20px;"
-        src='images/black-shopping-cart-icon-22.png'>
-    </a>
-  </div>
+  
 
 </body>
 

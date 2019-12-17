@@ -215,18 +215,18 @@ if(isset($_SESSION['nama'])){
 
 <body>
 
-  <nav class="navbar navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="index.php">GamingWorld</a>
       </div>
-      <ul class="nav navbar-nav">
-        <li><a href="news.html">Gaming News</a></li>
-      </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <?php if(isset($_SESSION['nama'])){?>
         <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+          <button
+            style="background-color: inherit;border: 0px;position: relative;margin-top: 10px;margin-left: 10px; right: 10px; font-family: inherit;"
+            class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
             <li><a href="daftar.php"><span class="glyphicon glyphicon-user"></span> <?php echo $home?></a></li>
             <i class="fa fa-caret-down"></i>
           </button>
@@ -245,16 +245,7 @@ if(isset($_SESSION['nama'])){
         <?php };?>
 
       </ul>
-      <form class="navbar-form navbar-right" action="/action_page.php">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit">
-              <i class="glyphicon glyphicon-search"></i>
-            </button>
-          </div>
-        </div>
-      </form>
+     
     </div>
   </nav>
 
@@ -321,22 +312,22 @@ if(isset($_SESSION['nama'])){
     </div>
     <div class="col-md-12">
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Free Fire'>
+      <a href='catalog-pubgm.php?jenis=Free Fire'>
           <img class="img-responsive game1" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/5.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Mobile Legends Bang Bang'>
+      <a href='catalog-pubgm.php?jenis=Mobile Legends Bang Bang'>
           <img class="img-responsive game2" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/11.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=PUBG Mobile'>
+      <a href='catalog-pubgm.php?jenis=PUBG Mobile'>
           <img class="img-responsive game3" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/15.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Speed Drifters'>
+      <a href='catalog-pubgm.php?jenis=Speed Drifters'>
           <img class="img-responsive game8" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/17.jpg'>
         </a>
         <br>
@@ -345,22 +336,22 @@ if(isset($_SESSION['nama'])){
 
     <div class="col-md-12">
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Arena of Valor'>
+      <a href='catalog-pubgm.php?jenis=Arena of Valor'>
           <img class="img-responsive game5"  style="box-shadow: 2px 3px 4px #ce5816;" src='Images/1.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Game of Sultans'>
+      <a href='catalog-pubgm.php?jenis=Game of Sultans'>
           <img class="img-responsive game6" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/8.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Lumia Saga'>
+      <a href='catalog-pubgm.php?jenis=Lumia Saga'>
           <img class="img-responsive game7" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/10.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Heroes Evolved'>
+      <a href='catalog-pubgm.php?jenis=Heroes Evolved'>
           <img class="img-responsive game8"  style="box-shadow: 2px 3px 4px #ce5816;" src='Images/9.jpg'>
         </a>
         <br>
@@ -369,22 +360,22 @@ if(isset($_SESSION['nama'])){
 
     <div class="col-md-12">
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Ragnarok'>
+      <a href='catalog-pubgm.php?jenis=Ragnarok'>
           <img class="img-responsive game5" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/16.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Mobile Legend Adventure'>
+      <a href='catalog-pubgm.php?jenis=Mobile Legend Adventure'>
           <img class="img-responsive game6" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/12.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Crisis Action'>
+      <a href='catalog-pubgm.php?jenis=Crisis Action'>
           <img class="img-responsive game7" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/2.jpg'>
         </a>
       </div>
       <div class="col-md-3">
-      <a href='catalog-steam.php?jenis=Call of Duty Mobile'>
+      <a href='catalog-pubgm.php?jenis=Call of Duty Mobile'>
           <img class="img-responsive game2" style="box-shadow: 2px 3px 4px #ce5816;" src='Images/3.jpg'>
         </a>
       </div>
@@ -459,12 +450,7 @@ if(isset($_SESSION['nama'])){
     </div>
   </div>
 
-  <div class="cart">
-    <a href="keranjang.php">
-      <img style="position:fixed; width:3%; height: 42px; float:left; left:20px; bottom: 20px;"
-        src='Images/black-shopping-cart-icon-22.png'>
-      </a>
-  </div>
+
 
 </body>
 
