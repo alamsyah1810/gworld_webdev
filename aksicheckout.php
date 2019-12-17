@@ -1,29 +1,37 @@
 <?php
-include("config_onlline.php");
+
 session_start();
-$query=mysqli_query($con,"select * from metode_pembayaran");
-$tampung=mysqli_fetch_assoc($query);
+include("config_onlline.php");
+$tampung=$_GET['id_metodepembayaran'];
+
+echo $tampung['id_metodepembayaran'];
 
 if(isset($_SESSION['nama'])){
-  $home=$_SESSION['nama'];
+    $home=$_SESSION['nama'];
+  
+  }else{}
+/*
+$query=mysqli_query($con,"SELECT FROM `cart`");
+*/
 
-}else{}
 ?>
 
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Pembayaran - GamingWorld</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href='css/bootstrap.min.css'>
-  <script src="script/jquery.min.js"></script>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='css/bootstrap.min.css'>
+    <script src="script/jquery.min.js"></script>
   <script src='js/bootstrap.min.js'></script>
 
-  <style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+<style>
     body {
       background-color: rgb(255, 136, 0);
       color: white;
@@ -47,7 +55,7 @@ if(isset($_SESSION['nama'])){
 
     .bg-putih {
       width: 35%;
-      top: 83px;
+      top: 85px;
       border-radius: 0px 0px 10px 10px;
       left: 34%;
       height: 480px;
@@ -55,34 +63,6 @@ if(isset($_SESSION['nama'])){
       position: relative;
       border: 1px solid #B0C4DE;
     }
-
-    .bg-putih h2 {
-      position: relative;
-      color: gray;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      top: 20px;
-      left: 30px;
-    }
-
-    .bg-putih .pembayaran {
-      position: relative;
-      top: 15px;
-      
-    }
-
-    .bg-putih .metode {
-      top: 20px;
-      position: relative;
-      margin-top: 10px;
-      border-color: rgb(170, 170, 170);
-      box-shadow: 1px 2px 3px gray;
-      border-radius: 6px;
-      text-align:center;
-      width: 60%;
-      left: 100px;
-      height: 70px;
-    }
-
 
     .header {
       width: 35%;
@@ -99,38 +79,13 @@ if(isset($_SESSION['nama'])){
       position: relative;
       top: 90px;
     }
-    
-    .tombol {
-      position:relative; 
-      top: 100px; 
-      border-radius: 4px; 
-      background-color:black; 
-      color:white;
-      left: 54%;
-      width: 7%;
-      border:0px; 
-      height: 40px; 
-      opacity:0.8;
-    }
 
-    .tombol-bayar{
-      position:relative; 
-      top: 100px; 
-      border-radius: 4px; 
-      background-color:black; 
-      color:white;
-      width: 7%;
-      left: 35%;
-      border:0px; 
-      height: 40px; 
-      opacity:0.8;
-    }
 
   </style>
-</head>
+
+
 
 <body>
-  
 <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -165,30 +120,18 @@ if(isset($_SESSION['nama'])){
     </div>
   </nav>
 
+
+
+
+
   <div class="header">
-    <h2>Pembayaran</h2>
+    <h2>Transaksi</h2>
   </div>
 
   <div class="bg-putih">
-  <?php while($tampung=mysqli_fetch_assoc($query)):?>
-    <div class="metode">
-         
-         <a href="aksicheckout.php?=<?php echo $tampung['id_metodepembayaran']?>">
-         <img style="position:relative;top:15px;" src="images_catalog/<?php echo $tampung['gambar']?> ">
-         </a>
-    </div>
-    <?php endwhile; ?>
+
   </div>
-
-  <a href="checkout.php">
-  <button class="tombol-bayar" type="button">Kembali</button>
-  </a>
-  <a href="hapuscart-index.php">
-  <button class="tombol" type="button">Batal</button>
-
-  
 
 
 </body>
-
 </html>

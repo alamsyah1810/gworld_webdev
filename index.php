@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("config_onlline.php");
-
+//include("hapuscart-index.php");
 
 /*$jumlahdata=mysqli_query($con,"SELECT count(nama_game) as 'aa' FROM game where jenis_game='2'");
 $aa=mysqli_fetch_assoc($jumlahdata);
@@ -218,7 +218,9 @@ if(isset($_SESSION['nama'])){
 <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
+       
         <a class="navbar-brand" href="index.php">GamingWorld</a>
+       
       </div>
       
       <ul class="nav navbar-nav navbar-right">

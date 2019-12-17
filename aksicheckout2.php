@@ -70,9 +70,9 @@ if (isset($_SESSION['nama'])) {
 
 }
 
-$ambilvoucher=mysqli_query($con,"SELECT d.id_hash, d.id_voucher, d.id_statusvoucher, d.id_transaksi, d.id_player, d.email_player, d.id_game FROM detail_voucher d, cart c where c.id_voucher=d.id_voucher and d.id_statusvoucher = '1' and c.id_voucher='$cariidvoucher[c.id_voucher]' limit 1;");
+$ambilvoucher=mysqli_query($con,"SELECT d.id_hash, d.id_voucher, d.id_statusvoucher, d.id_transaksi, d.id_player, d.email_player, d.id_game FROM detail_voucher d, cart c where c.id_voucher=d.id_voucher and d.id_statusvoucher = '1' and c.id_voucher='$cariidvoucher(c.id_voucher)' limit 1;");
 $ambilvoucher1=mysqli_fetch_assoc($ambilvoucher);
-$updatedetaivoucherbuattransaksi=mysqli_query($con,"update detail_voucher d set d.id_statusvoucher= '3',d.id_transaksi='$hasilquery[id_transksi]',d.id_player='0', d.email_player='0' where id_hash='$ambilvoucher[d.id_hash]';");
+$updatedetaivoucherbuattransaksi=mysqli_query($con,"update detail_voucher d set d.id_statusvoucher= '3',d.id_transaksi='$hasilquery[id_transksi]',d.id_player='0', d.email_player='0' where id_hash='$ambilvoucher(d.id_hash)';");
 $deletecart=mysqli_query($con,"DELETE FROM cart WHERE id_user='$cariiduser[id_user]' limit 1;");
 
 ?>

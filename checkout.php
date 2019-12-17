@@ -7,7 +7,7 @@ if (isset($_SESSION['nama'])) {
   $queryiduser=mysqli_query($con,"SELECT id_user, nama_user FROM `user` u where nama_user='$_SESSION[nama]'");
   $cariiduser=mysqli_fetch_assoc($queryiduser);
   
-  $query=mysqli_query($con,"SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v ,`user` u WHERE c.id_voucher=v.id_voucher and g.id_game=v.id_game and u.id_user=c.id_user and c.id_user='$cariiduser[id_user]' ");
+  $query=mysqli_query($con,"SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v ,`user` u WHERE c.id_voucher=v.id_voucher and g.id_game=v.id_game and u.id_user=c.id_user and `delete`= 0 and c.id_user='$cariiduser[id_user]' ");
 } else {
   $query=mysqli_query($con," SELECT id_cart,nama_game,nominal_voucher,harga_voucher,id_player,email_player,gambar FROM cart c,game g,voucher v  WHERE c.id_voucher=v.id_voucher and `delete`= 0 and g.id_game=v.id_game and id_temp_user='$_SESSION[sid]'");
 }
@@ -59,7 +59,7 @@ if(isset($_SESSION['nama'])){
       border: 1px solid #B0C4DE;
       border-radius: 0px 0px 5px 8px;
       left: 19%;
-      height: 220px;
+      height: 150px;
       background-color: white;
       position: relative;
     }
@@ -143,7 +143,7 @@ if(isset($_SESSION['nama'])){
     <h2>Checkout</h2>
   </div>
 
-  <div style="overflow: auto;" class="bg-putih">
+  <div class="bg-putih">
     <?php while($tampung=mysqli_fetch_assoc($query)) :?>
     <div style="margin-bottom: 20px;" class="back-voucher">
 

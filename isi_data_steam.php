@@ -131,7 +131,7 @@ if(isset($_SESSION['nama'])){
             class="email" type="text" name="email" placeholder=" Email" required>
       <input style="position:relative; left:169px;bottom:28px; width:39%; height:35px; text-align:center; background-color: black; color:white;opacity:0.8; border-radius: 4px;"
             class="button" type="submit" value="Lanjut ke Checkout">
-   </div>
+  </div>
   </div>
   </form>
   

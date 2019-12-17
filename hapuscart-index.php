@@ -27,6 +27,6 @@ $hasil11=mysqli_fetch_assoc($query11);
 $update=mysqli_query($con,"update cart set `delete`=1 where id_user='$hasil11[id_user]'");
 
 
-header("Location: checkout.php");
+header("Location: index.php");
 
 ?>
