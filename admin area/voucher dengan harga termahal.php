@@ -15,10 +15,10 @@ $query=mysqli_query($con,"SELECT MAX(harga_voucher) as 'harga voucher termahal' 
 <body>
 
 <div style='width: 300px;float:left:background-color:#eee;'>
-    <?php include "menu.php" ; ?>
+    <?php include "index.php" ; ?>
   </div>
 
- <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
+ <div style="position: relative; left: 300px; bottom: 570px;" class="table-responsive">
                 <table class="table table-striped">
                   <thead>
                     <tr>

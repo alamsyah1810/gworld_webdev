@@ -3,19 +3,21 @@
 session_start();
 include("config_onlline.php");
 
-$cart=mysqli_query($con,"select * from cart where id_temp_user='$_SESSION[sid]'");
-$cartassoc=mysqli_fetch_assoc($cart);
+$query=mysqli_query($con,"select * from transksi where id_temp_user='$_SESSION[sid]'");
+$exe1=mysqli_fetch_assoc($query);
 
-$queryiduser=mysqli_query($con,"SELECT id_user FROM `user` u where nama_user='$_SESSION[nama]'");
-$iduser=mysqli_fetch_assoc($queryiduser);
-$today=date("Y-m-d");
-$harga=$cartassoc['total_harga'];
-$id=$iduser['id_user'];
-$pembayaran=$_GET['id_metodepembayaran'];
-$temp=$_SESSION['sid'];
-$a="insert into transksi (date, total_harga,id_user,id_metodepembayaran,no_rekening,id_temp_user,tambah_poin_user,kurangi_poin_user,sub_total_harga,id_statusvoucher) VALUES ('$today','$harga','$id','$pembayaran',0,'$temp',0,0,'$harga',3)";
-$query=mysqli_query($con,$a);
-$transaksi=mysqli_fetch_assoc($query);
+$update=mysqli_query($con,"update transksi set id_statusvoucher = 2 where id_temp_user='$_SESSION[sid]'");
+$exeupdate=mysqli_fetch_assoc($update);
+
+$update2=mysqli_query($con,"update cart set `delete` = 1 where id_temp_user='$_SESSION[sid]'");
+$exeupdate2=mysqli_fetch_assoc($update2);
+
+$voucher=mysqli_query($con,"SELECT id_hash FROM detail_voucher d, cart c WHERE d.id_voucher=c.id_voucher and c.id_temp_user='$_SESSION[sid]'");
+$exevoucher=mysqli_fetch_assoc($voucher);
+
+
+
+//$update3=
 
 
 
@@ -41,7 +43,7 @@ $query=mysqli_query($con,"SELECT FROM `cart`");
   <script src='js/bootstrap.min.js'></script>
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bayar</title>
+    <title>Terima Kasih</title>
 </head>
 
 
@@ -94,21 +96,21 @@ $query=mysqli_query($con,"SELECT FROM `cart`");
       top: 90px;
     }
 
-    .bg-putih .text-bayar {
-      color: black;
-      position: relative;
-      font-size: 16px;
-      top: 35px;
-      text-align: center;
+    .makasih {
+        color: black;
+        position: relative;
+        text-align: center;
+        font-size: 16px;
+        top: 35px;
     }
 
-    .bg-putih .nomor-pembayaran {
-      font-weight: bold;
-      color: black;
-      font-size: 20px;
-      top: 40px;
-      text-align: center;
-      position: relative;
+    .berikut {
+        color: black;
+        position: relative;
+        text-align: center;
+        font-size: 17px;
+        font-weight: bold;
+        top: 35px;
     }
 
     .putih {
@@ -116,23 +118,24 @@ $query=mysqli_query($con,"SELECT FROM `cart`");
       box-shadow: 1px 2px 3px gray;
       border-radius: 6px;
       top: 50px;
-      left: 80px;
+      left: 85px;
       height: 40px;
       width: 65%;
       position: relative;
     }
 
-      .putih .nomor {
-      color: black;
-      top: 7px;
-      font-size : 17px;
-      letter-spacing: 2px;
-      text-align: center;
-      position: relative;
+    .hash {
+        color: black;
+        position: relative;
+        text-align:center;
+        font-weight: bold;
+        font-size : 18px;
+        letter-spacing: 4px;
+        top: 5px;
     }
 
-    .sudah-bayar {
-      width: 22%;
+    .index {
+        width: 22%;
       position: relative;
       background-color: black;
       height: 50px;
@@ -140,21 +143,8 @@ $query=mysqli_query($con,"SELECT FROM `cart`");
       top: 80px;
       border-radius: 6px;
       font-size: 12px;
-      left: 130px;
+      left: 195px;
       color: white;
-    }
-
-    .cancel {
-      width: 22%;
-      position: relative;
-      background-color: black;
-      height: 50px;
-      opacity: 0.8;
-      top: 80px;
-      border-radius: 6px;
-      font-size: 12px;
-      color: white;
-      left: 140px;
     }
 
   </style>
@@ -201,23 +191,17 @@ $query=mysqli_query($con,"SELECT FROM `cart`");
 
 
   <div class="header">
-    <h2>Transaksi</h2>
+    <h2>Terima Kasih</h2>
   </div>
 
   <div class="bg-putih">
-      <p class="text-bayar">Mohon melakukan pembayaran dalam kurun waktu 24 jam</p>
-      <p class="nomor-pembayaran">Nomor Pembayaran</p>
-
-      <div class="putih">
-      <p class="nomor"><?php echo $cartassoc['id_temp_user'] ?></p>
+    <p class="makasih">Terima kasih sudah berbelanja bersama Gaming World !<p>
+    <p class="berikut">Berikut kode anda untuk mendapat voucher game kesayangan anda</p>
+    <div class="putih">
+        <p class="hash"><?php echo $exevoucher['id_hash']?></p>
       </div>
-        
-      <a href="sudah-bayar.php">
-      <button class="sudah-bayar" type="button">Saya Sudah Membayar</button>
-      </a>
-      
-      <a href="batal-transaksi.php">
-      <button class="cancel" type="button">Batalkan pembayaran</button>
+      <a href="kembali-keindex.php">
+      <button class="index" type="button">Index</button>
       </a>
   </div>
 

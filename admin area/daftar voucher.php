@@ -10,15 +10,22 @@ $query=mysqli_query($con,"SELECT id_game, nama_game, status_game, nama_jenisgame
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href='table.css'>
+
+
+
 </head>
 
 <body>
 
-<div style='width: 300px;float:left:background-color:#eee;'>
-    <?php include "menu.php" ; ?>
+
+
+<div style='width: 300px;float:left:background-color:#eee;position:relative;'>
+    <?php include "index.php" ; ?>
   </div>
 
- <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
+  
+
+ <div style="position: relative; left: 300px; bottom: 570px;" class="table-responsive">
                 <table class="table table-striped">
                   <thead>
                     <tr>
@@ -54,4 +61,5 @@ $query=mysqli_query($con,"SELECT id_game, nama_game, status_game, nama_jenisgame
                 </table>
               </div>
     </body>
+   
     </html>

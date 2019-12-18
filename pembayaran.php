@@ -2,6 +2,7 @@
 include("config_onlline.php");
 session_start();
 $query=mysqli_query($con,"select * from metode_pembayaran");
+
 $tampung=mysqli_fetch_assoc($query);
 
 if(isset($_SESSION['nama'])){
@@ -172,8 +173,7 @@ if(isset($_SESSION['nama'])){
   <div class="bg-putih">
   <?php while($tampung=mysqli_fetch_assoc($query)):?>
     <div class="metode">
-         
-         <a href="aksicheckout.php?=<?php echo $tampung['id_metodepembayaran']?>">
+         <a href="aksicheckout.php?id_metodepembayaran=<?php echo $tampung['id_metodepembayaran']?>">
          <img style="position:relative;top:15px;" src="images_catalog/<?php echo $tampung['gambar']?> ">
          </a>
     </div>
@@ -186,9 +186,11 @@ if(isset($_SESSION['nama'])){
   <a href="hapuscart-index.php">
   <button class="tombol" type="button">Batal</button>
 
-  
+  <?php
 
+  ?>
 
 </body>
+
 
 </html>

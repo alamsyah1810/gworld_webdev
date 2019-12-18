@@ -14,14 +14,14 @@ $query=mysqli_query($con,"SELECT id_user, nama_user, status_user, poin_user FROM
 <body>
 
 <div style='width: 300px;float:left:background-color:#eee;'>
-    <?php include "menu.php" ; ?>
+    <?php include "index.php" ; ?>
   </div>
 
- <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
-                <table class="table table-striped">
+ <div style="position: relative; left: 300px; bottom: 570px;" class="table-responsive">
+                <table style="width: 50%;" class="table table-striped">
                   <thead>
                     <tr>
-                      <th colspan="2">User dengan poin terbanyak</th>
+                      <th style="text-align:center;" colspan="2">User dengan poin terbanyak</th>
                     </tr>
                     <tr style="background-color:#dddddd;">
                       <td style="text-align:center;">User</td>

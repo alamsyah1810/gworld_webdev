@@ -17,17 +17,19 @@ $query=mysqli_query($con,"SELECT m.id_metodepembayaran,COUNT(t.id_metodepembayar
 <body>
 
 <div style='width: 300px;float:left:background-color:#eee;'>
-    <?php include "menu.php" ; ?>
+    <?php include "index.php" ; ?>
   </div>
 
- <div style="position: relative; left: 300px; bottom: 588px;" class="table-responsive">
+ <div style="position: relative; left: 300px; bottom: 570px;" class="table-responsive">
                 <table class="table table-striped">
                   <thead>
                     <tr>
                       <th colspan="2" style="text-align:center;width:55%;">Metode pembayaran paling sering</th>
-                    </tr>
+                    </tr >
+                    <tr style="background-color:#dddddd;">
                     <td style="text-align:center;">Metode</td>
                     <td style="text-align:center;">Jumlah</td>
+                    </tr>
                   </thead>
                   <tbody>
                     <?php while($tampung=mysqli_fetch_assoc($query)): ?>

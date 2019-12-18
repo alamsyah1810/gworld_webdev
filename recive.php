@@ -7,6 +7,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
  
 $query = mysqli_query($con,"select * from `user` where nama_user='$username' and password_user='$password'");
+$user_id = mysqli_fetch_all($query);
 $cek = mysqli_num_rows($query);
 
 
@@ -18,6 +19,7 @@ if($cek>0){
    header("Location: index.php");
   
    $_SESSION["nama"]=$username;
+   $_SESSION["ID"]=$user_id[0][0];
 }else{
     echo '<script>
     alert ("Username atau Password salah!");
