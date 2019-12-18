@@ -140,11 +140,19 @@ $query=mysqli_query($con,"SELECT FROM `cart`");
       background-color: black;
       height: 50px;
       opacity: 0.8;
-      top: 80px;
+      top: 70px;
       border-radius: 6px;
       font-size: 12px;
       left: 195px;
       color: white;
+    }
+
+    .notes {
+      color: black;
+      position: relative;
+      font-size: 10px;
+      top: 65px;
+      text-align: center;
     }
 
   </style>
@@ -200,6 +208,8 @@ $query=mysqli_query($con,"SELECT FROM `cart`");
     <div class="putih">
         <p class="hash"><?php echo $exevoucher['id_hash']?></p>
       </div>
+
+    <p class="notes">*untuk game top up voucher langsung dikirimkan ke ID Game</p>
       <a href="kembali-keindex.php">
       <button class="index" type="button">Index</button>
       </a>
